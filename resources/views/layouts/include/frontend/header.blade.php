@@ -6,7 +6,7 @@
 					<div class="topbar-menu left-menu">
 						<ul>
 							<li class="menu-item" >
-								<a title="Hotline: (+123) 456 789" href="#" ><span class="icon label-before fa fa-mobile"></span>Hotline: (+123) 456 789</a>
+								<a title="No Telepon: 085 867 770 343" href="#" ><span class="icon label-before fa fa-mobile"></span>No Telepon: 085 867 770 343</a>
 							</li>
 						</ul>
 					</div>
@@ -93,7 +93,9 @@
 				<div class="mid-section main-info-area">
 
 					<div class="wrap-logo-top left-section">
-						<a href="{{ url('/') }}" class="link-to-home"><img src="{{ asset('template_website') }}/images/logo-top-1.png" alt="mercado"></a>
+						<a href="{{ url('/') }}" class="link-to-home"><img width="80px" src="{{ asset('/logo.png') }}" alt="mercado"></a>
+
+						{{-- <a href="{{ url('/') }}" class="link-to-home"><img src="{{ asset('template_website') }}/images/logo-top-1.png" alt="mercado"></a> --}}
 					</div>
 
 					<div class="wrap-search center-section">

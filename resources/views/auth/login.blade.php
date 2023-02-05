@@ -45,16 +45,16 @@
 										<label class="remember-field">
                                             <input class="frm-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                                             <span for="remember">
-                                                {{ __('Remember Me') }}
+                                                {{ __('Remember Me') }} &nbsp;&nbsp;&nbsp;  <a href="{{ url('/register') }}" style="color: #FF2832">Register Sekarang</a>
                                             </span>
+                                           
 										</label>
-                                        
-                                            @if (Route::has('password.request'))
-                                            <a class="link-function left-positionk" title="Forgotten password?"href="{{ route('password.request') }}">
+										@if (Route::has('password.request'))
+										<a class="link-function left-positionk" title="Forgotten password?"href="{{ route('password.request') }}">
                                                 {{ __('Forgot Your Password?') }}
-                                            </a>
-                                            @endif
-									</fieldset>
+                                            </a>  
+										@endif                                    
+									</fieldset>									
 									<input type="submit" class="btn btn-submit" value="Login" name="submit">
 								</form>
 							</div>												

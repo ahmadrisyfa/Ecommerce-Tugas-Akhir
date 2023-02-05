@@ -15,6 +15,9 @@
 		</div>
 		
 		<div class="container pb-60">
+			@if (session('message'))
+				<h5 class="alert alert-success text-center">{{ session('message') }}</h5>				
+			@endif
 			<div class="row">
 				<div class="col-md-12 text-center">
 					<h2>Terima kasih atas pesanan Anda</h2>

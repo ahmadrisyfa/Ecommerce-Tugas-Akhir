@@ -20,7 +20,7 @@
                           <th>ID</th>
                           <th>category</th>
                           <th>Product</th>
-                          <th>Price</th>
+                          <th>Harga</th>
                           <th>Quantity</th>
                           <th>Status</th>
                           <th>Action</th>
@@ -38,7 +38,7 @@
                             <td>{{ $product->name }}</td>
                             <td>{{ $product->selling_price }}</td>
                             <td>{{ $product->quantity }}</td>
-                            <td>{{ $product->status  == '1' ? 'hiddden' : 'Visible' }}</td>
+                            <td>{{ $product->status  == '1' ? 'Sembunyikan' : 'Tampilkan' }}</td>
                             <td>
                                 <a href="{{ url('admin/products/'.$product->id.'/edit') }}" class="btn btn-sm btn-success" style="font-weight:bold;color:#2f2d2d"><span class="mdi mdi-lead-pencil"></span> Edit</a>
                                 <a href="{{ url('admin/products/'.$product->id.'/delete') }}" style="font-weight:bold;color:#2f2d2d" onclick="return confirm('Yakin Ingin Menghapus Data Ini?')" class="btn btn-sm btn-danger"><span class="mdi mdi-delete-forever"></span> Delete</a>

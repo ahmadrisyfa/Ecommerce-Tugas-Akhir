@@ -26,7 +26,7 @@
                             <tr>
                                 <td>{{ $category->id }}</td>
                                 <td>{{ $category->name }}</td>
-                                <td>{{ $category->status == '1' ? 'Hidden':'Visible' }}</td>
+                                <td>{{ $category->status == '1' ? 'Sembunyikan':'Tampilkan' }}</td>
                                 <td>
                                     <a href="{{ url('admin/category/'.$category->id.'/edit') }}"  style="font-weight:bold" class="btn btn-success"><span class="mdi mdi-lead-pencil"></span> Edit</a>
                                     <a href="{{ url('admin/category/'.$category->id.'/delete') }}" onclick="return confirm('Yakin Ingin Menghapus Data Ini?')" style="font-weight:bold" class="btn btn-danger"><span class="mdi mdi-delete-forever"></span> Hapus</a>

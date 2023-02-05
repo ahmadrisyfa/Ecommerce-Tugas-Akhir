@@ -59,6 +59,7 @@
                                 <input id="password-confirm" type="password" class="" name="password_confirmation" required autocomplete="new-password">
                                 </fieldset>
                                 <input type="submit" class="btn btn-sign" value="Register" name="register">
+                                <a href="{{ url('/login') }}" class="btn btn-sign" style="margin-left:30px"  name="register">Sudah Punya Akun?</a>
                             </form>
                         </div>											
                     </div>

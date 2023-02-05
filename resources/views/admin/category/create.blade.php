@@ -41,7 +41,7 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="status">status</label><br>
-                            <input type="checkbox" name="status" style="width: 30px;height:30px">
+                            <input type="checkbox" name="status" style="width: 30px;height:30px"> Checked=Sembunyikan,UnChecked=Tampilkan
                         </div>
                         <div class="col-md-12">
                             <h4>SEO Tags</h4>

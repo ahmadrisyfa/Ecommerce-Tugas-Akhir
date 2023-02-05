@@ -30,7 +30,7 @@
                                   <td>{{ $color->id }}</td>
                                   <td>{{ $color->name }}</td>
                                   <td>{{ $color->code }}</td>
-                                  <td>{{ $color->status  ? 'Hidden':'Visible' }}</td>
+                                  <td>{{ $color->status  ? 'Sembunyikan':'Tampilkan' }}</td>
                                   <td>
                                       <a href="{{ url('admin/colors/'.$color->id.'/edit') }}"  style="font-weight:bold" class="btn btn-success"><span class="mdi mdi-lead-pencil"></span> Edit</a>
                                       <a href="{{ url('admin/colors/'.$color->id.'/delete') }}"  onclick="return confirm('Yakin Ingin Menghapus Data Ini?')"   style="font-weight:bold" class="btn btn-danger"><span class="mdi mdi-delete-forever"></span> Hapus</a>

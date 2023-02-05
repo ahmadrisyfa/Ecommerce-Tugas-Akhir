@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Order extends Model
 {
@@ -16,12 +17,15 @@ class Order extends Model
         'fullname', 
         'email',
         'phone',
-        'pincode',
+        'pincode', 
         'address',
         'status_message',
         'payment_mode',
         'payment_id'   
       ];
-
+      public function OrderItem() 
+      {
+          return $this->hasMany(Orderitem::class, 'order_id', 'id');
+      }
 }
 

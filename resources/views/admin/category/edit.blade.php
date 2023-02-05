@@ -40,7 +40,7 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="status">status</label><br>
-                            <input type="checkbox"  style="width:30px;height:30px"name="status" {{ $category->status == '1' ? 'checked':''}}>
+                            <input type="checkbox"  style="width:30px;height:30px"name="status" {{ $category->status == '1' ? 'checked':''}}> Checked=Sembunyikan,UnChecked=Tampilkan
                         </div>
                         <div class="col-md-12">
                             <h4>SEO Tags</h4>

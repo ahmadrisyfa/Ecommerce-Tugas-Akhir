@@ -18,30 +18,30 @@
 					{{-- <form action="#" method="get" name="frm-billing"> --}}
 						<p class="row-in-form">
 							<label for="fname">Nama Lengkap:<span>*</span></label>
-							<input id="fname" type="text" wire:model="fullname" value="" placeholder="Nama Lengkap Anda">
+							<input id="fname" type="text" wire:model.defer="fullname" value="" placeholder="Nama Lengkap Anda">
                             @error('fullname')<small class="text-danger" style="font-size: 14px">{{ $message }}</small>@enderror
 						</p>						
 						<p class="row-in-form">
 							<label for="email">Email:<span>*</span></label>
-							<input id="email" type="email" wire:model="email" value="" placeholder="Type your email">
+							<input id="email" type="email" wire:model.defer="email" value="" placeholder="Type your email">
                             @error('email')<small class="text-danger" style="font-size: 14px">{{ $message }}</small>@enderror
 
 						</p>
 						<p class="row-in-form">
 							<label for="phone">No Telepon<span>*</span></label>
-							<input id="phone" type="number" wire:model="phone" value="" placeholder="10 digits format">
+							<input id="phone" type="number" wire:model.defer="phone" value="" placeholder="10 digits format">
                             @error('phone')<small class="text-danger" style="font-size: 14px">{{ $message }}</small>@enderror
 
 						</p>												
 						<p class="row-in-form">
 							<label for="zip-code">Pin-Code / ZIP-Code:<span>*</span></label>
-							<input id="zip-code" type="number" wire:model="pincode" value="" placeholder="Your postal code">
+							<input id="zip-code" type="number" wire:model.defer="pincode" value="" placeholder="Your postal code">
                             @error('pincode')<small class="text-danger" style="font-size: 14px">{{ $message }}</small>@enderror
 
 						</p>
                         <p class="row-in-form" style="width: 100%">
 							<label for="add">Alamat Lengkap:<span>*</span></label>
-							<textarea id="add"  type="text" wire:model="address" value="" rows="4" style="width: 100%;border-color:#E6E6E6;padding:10px" placeholder=""></textarea>
+							<textarea id="add"  type="text" wire:model.defer="address" value="" rows="4" style="width: 100%;border-color:#E6E6E6;padding:10px" placeholder=""></textarea>
                             @error('address')<small class="text-danger" style="font-size: 14px">{{ $message }}</small>@enderror
 
 						</p>						
@@ -61,10 +61,14 @@
 						<p class="summary-info"><span class="title">Credit Cart (saved)</span></p>
 						<div class="choose-payment-methods">
 							<label class="payment-method">
-								<input name="payment-method" id="payment-method-bank" value="bank" type="radio" >
+								<input name="payment-method" id="payment-method-bank" value="bank" type="radio"  wire:loading.attr="disabled" >
 								<span>Cash On Delivery</span>
 								<span class="payment-desc">
-                                   <button type="submit" class="btn btn-small" wire:click="codOrder">Pesan Sekarang (COD)</button> 
+                                   <button type="submit" class="btn btn-small" wire:loading.attr="disabled" wire:click="codOrder">
+								<span wire:loading.remove wire:target="codOrder">Pesan Sekarang (COD)</span>	
+								<span wire:loading wire:target="codOrder">Sedang Memesan</span>	
+
+								</button> 
                                 </span>
 							</label>
 							<label class="payment-method">

@@ -33,7 +33,7 @@
         </a>
         <div class="collapse" id="ui-basic">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="{{ url('admin/products/create') }}">Add Product</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ url('admin/products/create') }}">Tambah Product</a></li>
             <li class="nav-item"> <a class="nav-link" href="{{ url('admin/products') }}">View Product</a></li>
           </ul>
         </div>
@@ -41,7 +41,7 @@
       <li class="nav-item">
         <a class="nav-link" href="{{ url('admin/colors') }}">
           <i class="mdi mdi-invert-colors menu-icon"></i>
-          <span class="menu-title">Colors</span>
+          <span class="menu-title">Warna</span>
         </a>
       </li>
       <li class="nav-item">
@@ -67,9 +67,9 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="documentation/documentation.html">
-          <i class="mdi mdi-file-document-box-outline menu-icon"></i>
-          <span class="menu-title">Documentation</span>
+        <a class="nav-link" href="{{ url('admin/pemesan') }}">
+          <i class="mdi mdi-television-guide menu-icon"></i>
+          <span class="menu-title">Pemesan</span>
         </a>
       </li>
     </ul>

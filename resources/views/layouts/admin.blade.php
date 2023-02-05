@@ -8,7 +8,11 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
+    <style>
+        label{
+            text-transform: capitalize;
+        }
+    </style>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('admin') }}/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="{{ asset('admin') }}/vendors/base/vendor.bundle.base.css">
@@ -21,7 +25,7 @@
     <!-- endinject -->
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"rel="stylesheet"/>
     @stack('css')
-    <link rel="shortcut icon" href="{{ asset('admin') }}/images/favicon.png" />
+    <link rel="shortcut icon" href="{{ asset('logo.png') }}" />
     @livewireStyles
 </head>
 <body>

@@ -76,7 +76,7 @@
                     <div class="tab-pane fade border p-3 show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
                         <div class="mb-3">
                             <label style="padding-bottom: 5px;font-weight:300">Category</label>
-                                <select name="category_id" id="category_id" class="form-control">
+                                <select name="category_id" id="category_id" class="form-select">
                                     <option disabled selected style="font-weight: bold;">Select Category</option>
                                         @foreach ($categories as $category)
                                             @if(old('category_id',$product->category_id) == $category->id)
@@ -97,7 +97,7 @@
                         </div>
                         <div class="mb-3">
                                 <label style="padding-bottom: 5px;font-weight:300">Select Brand</label>
-                                <select name="brand" id="brand" class="form-control">
+                                <select name="brand" id="brand" class="form-select">
                                         <option disabled selected style="font-weight: bold;">Select Brand</option>
                                 @foreach ($brands as $brand)
                                     @if(old('brand',$product->brand) == $brand->name)
@@ -164,7 +164,7 @@
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label style="padding-bottom: 5px;font-weight:300">Status</label>
-                                    <input type="checkbox" name="status"  {{ $product->status == '1' ? 'checked':'' }} id="status" style="width:30px;height:30px">
+                                    <input type="checkbox" name="status"  {{ $product->status == '1' ? 'checked':'' }} id="status" style="width:30px;height:30px"> Checked=Sembunyikan,UnChecked=Tampilkan
                                 </div>
                             </div>
                         </div>

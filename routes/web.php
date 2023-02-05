@@ -29,6 +29,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/wishlist', [App\Http\Controllers\Frontend\WishlistController::class, 'index']);
     Route::get('/cart', [App\Http\Controllers\Frontend\CartController::class, 'index']);
     Route::get('/checkout', [App\Http\Controllers\Frontend\CheckoutController::class, 'index']);
+    Route::get('/orders', [App\Http\Controllers\Frontend\OrderController::class, 'index']);
+    Route::get('/orders/{orderId}', [App\Http\Controllers\Frontend\OrderController::class, 'show']);
+
+    
 }); 
 
 Route::get('thank-you', [App\Http\Controllers\Frontend\FrontendController::class, 'thankyou']);
@@ -92,4 +96,11 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
     });
 
     Route::get('/brands',App\Http\Livewire\Admin\Brand\Index::class);
+
+    Route::controller(App\Http\Controllers\Admin\PemesanController::class)->group(function (){
+        Route::get('/pemesan','index');
+        Route::get('/pemesan/{id_pemesan}','show');
+        Route::put('/pemesan/{id_pemesan}','update');
+    });
 });
+
