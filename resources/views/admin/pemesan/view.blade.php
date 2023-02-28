@@ -3,12 +3,17 @@
 <div class="row">
     <div class="col-md-12">
         @if (session('message'))
-            <div class="alert alert-success">{{ session('message') }}</div>
+            <div class="alert alert-success text-center">{{ session('message') }}</div>
         @endif
         <div class="card">
             <div class="card-header">
                 <h3>
                 <a href="{{ url('admin/pemesan') }}" class="btn btn-info float-end">Kembali</a>
+                <a href="{{ url('admin/invoice/'.$pemesan->id.'/generate') }}" class="btn btn-primary float-end mx-1">Download Invoice</a>
+                <a href="{{ url('admin/invoice/'.$pemesan->id) }}" target="_blank" class="btn btn-warning float-end">View Invoice</a>
+                <a href="{{ url('admin/invoice/'.$pemesan->id.'/email') }}" class="btn btn-info float-end mx-1">Send invoice Via Mail</a>
+
+
                 </h3>
             </div>
 

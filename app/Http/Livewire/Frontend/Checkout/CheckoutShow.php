@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Frontend\Checkout;
 
 use App\Models\Cart;
 use App\Models\Order;
+use App\Models\Product;
 use Livewire\Component;
 use App\Models\OrderItem;
 use Illuminate\Support\Str;
@@ -96,7 +97,9 @@ class CheckoutShow extends Component
     {
         $this->fullname = auth()->user()->name;
         $this->email = auth()->user()->email;
+     
 
+        $this->ProductTerkait = Product::inRandomOrder()->take('15')->get();
         $this->totalProductAmount = $this->totalProductAmount();
         return view('livewire.frontend.checkout.checkout-show',[
             'totalProductAmount' => $this->totalProductAmount

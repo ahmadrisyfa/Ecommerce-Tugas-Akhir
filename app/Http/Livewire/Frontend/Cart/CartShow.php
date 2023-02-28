@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Frontend\Cart;
 
 use App\Models\Cart;
+use App\Models\Product;
 use Livewire\Component;
 
 class CartShow extends Component
@@ -133,6 +134,7 @@ class CartShow extends Component
 
     public function render()
     {
+        $this->ProductTerkait = Product::inRandomOrder()->take('15')->get();
         $this->cart = Cart::where('user_id', auth()->user()->id)->get();
         return view('livewire.frontend.cart.cart-show',[
             'cart' => $this->cart

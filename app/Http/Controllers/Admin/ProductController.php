@@ -147,9 +147,9 @@ class ProductController extends Controller
                         ]);
                     }
                 }
-         return redirect()->back();
+        //  return redirect()->back();
 
-                    // return redirect('/admin/products')->with('message','Product Berhasil Di Update');
+                    return redirect('/admin/products')->with('message','Product Berhasil Di Update');
 
             }
             else

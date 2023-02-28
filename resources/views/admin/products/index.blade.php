@@ -36,7 +36,7 @@
                                 No Category
                             @endif
                             <td>{{ $product->name }}</td>
-                            <td>{{ $product->selling_price }}</td>
+                            <td style="width:150px">@currency( $product->selling_price)</td>
                             <td>{{ $product->quantity }}</td>
                             <td>{{ $product->status  == '1' ? 'Sembunyikan' : 'Tampilkan' }}</td>
                             <td>

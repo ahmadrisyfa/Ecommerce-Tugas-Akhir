@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Frontend\Product;
 use App\Models\Cart;
+use App\Models\Product;
 use Livewire\Component;
 use App\Models\Wishlists;
 use Illuminate\Support\Facades\Auth;
@@ -191,7 +192,7 @@ class View extends Component
     }
     public function incrementQuantity()
     {
-        if($this->quantityCount < 10){
+        if($this->quantityCount < 200){
         $this->quantityCount++;
         }
     }
@@ -212,9 +213,13 @@ class View extends Component
 
     public function render()
     {
+        
+        $this->productspopular = Product::inRandomOrder()->where('id', '!=', $this->product->id)->take('5')->get();
+
+        $this->ProductTerkait = Product::inRandomOrder()->where('id', '!=', $this->product->id)->take('15')->get();
         return view('livewire.frontend.product.view',[
             'category' => $this->category,
-            'product' => $this->product
+            'product' => $this->product,
         ]);
     }
 }

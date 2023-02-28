@@ -48,28 +48,9 @@
 		<div class="container">
 
 			@yield('content')
-			<!--MAIN SLIDE-->
-			{{-- @yield('content_slide') --}}
-			<!--MAIN SLIDE-->
-
-			<!--BANNER-->
-			{{-- @yield('content_banner') --}}
-			<!--BANNER-->
-
-			<!--On Sale-->
-			{{-- @yield('content_OnSale') --}}
-			<!--On Sale-->
 
 			@yield('content_login')
-			@yield('content_register')
-			
-			<!--Banner And Latest Products-->
-			{{-- @yield('content_latest_product') --}}
-			<!--Banner And Latest Products-->
-
-			<!--Banner And Product Categories-->
-			{{-- @yield('content_product_categories') --}}
-			<!--Banner And Product Categories-->
+			@yield('content_register')		
 
 		</div>
 

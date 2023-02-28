@@ -1,5 +1,6 @@
 <?php
 
+// use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +25,9 @@ Route::get('/', [App\Http\Controllers\Frontend\FrontendController::class, 'index
 Route::get('/collections', [App\Http\Controllers\Frontend\FrontendController::class, 'categories']);
 Route::get('/collections/{category_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'products']);
 Route::get('/collections/{category_slug}/{product_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'productView']);
+Route::get('/product-terbaru', [App\Http\Controllers\Frontend\FrontendController::class, 'ProductTerbaru']);
+Route::get('/search', [App\Http\Controllers\Frontend\FrontendController::class, 'search']);
+
 
 Route::middleware(['auth'])->group(function () {    
     Route::get('/wishlist', [App\Http\Controllers\Frontend\WishlistController::class, 'index']);
@@ -31,6 +35,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/checkout', [App\Http\Controllers\Frontend\CheckoutController::class, 'index']);
     Route::get('/orders', [App\Http\Controllers\Frontend\OrderController::class, 'index']);
     Route::get('/orders/{orderId}', [App\Http\Controllers\Frontend\OrderController::class, 'show']);
+
+    Route::get('/profile', [App\Http\Controllers\Frontend\ProfileController::class, 'index']);
+    Route::post('/profile', [App\Http\Controllers\Frontend\ProfileController::class, 'update']);
+
+    Route::get('/ganti-password', [App\Http\Controllers\Frontend\ProfileController::class, 'passwordCreate']);
+    Route::post('/ganti-password', [App\Http\Controllers\Frontend\ProfileController::class, 'changePassword']);
 
     
 }); 
@@ -40,7 +50,7 @@ Route::get('thank-you', [App\Http\Controllers\Frontend\FrontendController::class
 
 
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
@@ -101,6 +111,24 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
         Route::get('/pemesan','index');
         Route::get('/pemesan/{id_pemesan}','show');
         Route::put('/pemesan/{id_pemesan}','update');
+
+        Route::get('/invoice/{id_pemesan}','ViewInvoice');
+        Route::get('/invoice/{id_pemesan}/generate','generateInvoice');
+        Route::get('/invoice/{id_pemesan}/generate','generateInvoice');
+        Route::get('/invoice/{id_pemesan}/email','InvoiceEmail');
+
+
+    });
+
+
+    Route::controller(App\Http\Controllers\Admin\UserController::class)->group(function (){
+        Route::get('/users','index');
+        Route::get('/users/create','create');
+        Route::post('/users/create','store');
+        Route::get('/users/{id}/edit','edit');
+        Route::put('/users/{id}/edit','update');
+        Route::get('/users/{id}/delete','destroy');
+
     });
 });
 

@@ -165,24 +165,24 @@
                                             @endif
                                             <div class="group-flash">
                                                 @if ($productItem->quantity > 0)
-                                                <span class="flash-item bg-success" style="font-weight:bold">In Stock</span>    
+                                                <span class="flash-item bg-success" style="font-weight:bold">Ready</span>    
                                                 @else
-                                                <span class="flash-item sale-label" style="width: 90px">Out Of Stock</span>
+                                                <span class="flash-item sale-label" style="width: 90px">Habis</span>
                                                 @endif
                                             </div>
                                         </a>
                                     </div>
                                     <div class="product-info">
-                                        <a href="{{ url('/collections/'.$productItem->category->slug.'/'.$productItem->slug) }}" class="product-name" style="font-weight: 500;text-transform:capitalize"><span>{{ $productItem->name }} [{{ $productItem->brand }}]</span></a>
+                                        <a href="{{ url('/collections/'.$productItem->category->slug.'/'.$productItem->slug) }}" class="product-name" style="font-weight: 500;text-transform:capitalize"><span>{{ $productItem->name }}</span></a>
                                         <div class="wrap-price"><ins><p class="product-price">@currency($productItem->selling_price)</p></ins> <del><p class="product-price">@currency($productItem->original_price)</p></del></div>
-                                        <a href="#" class="btn add-to-cart">Add To Cart</a>
+                                        <a href="{{ url('/collections/'.$productItem->category->slug.'/'.$productItem->slug) }}" class="btn add-to-cart">Detail</a>
                                     </div>
                                 </div>
                             </li>
                             @empty
                                 <div class="col-md-12">
                                     <div class="p-2 text-center">
-                                        <h5>No Products Available For {{ $category->name }}</h5>
+                                        <h5>Tidak Ada Product Di Category {{ $category->name }}</h5>
                                     </div>
                                 </div>
                             @endforelse						

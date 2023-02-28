@@ -27,12 +27,12 @@ class SliderFormRequest extends FormRequest
             'title'=>[
                 'required',
                 'string',
-                'max:255'
+                'max:80'
             ],
             'description'=>[
                 'required',
                 'string',
-                'max:800'
+                'max:400'
             ],
             'image'=>[
                 'nullable',

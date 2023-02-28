@@ -7,32 +7,32 @@
                     <li class="fc-info-item">
                         <i class="fa fa-truck" aria-hidden="true"></i>
                         <div class="wrap-left-info">
-                            <h4 class="fc-name">Free Shipping</h4>
-                            <p class="fc-desc">Free On Oder Over $99</p>
+                            <h4 class="fc-name">Gratis Ongkir</h4>
+                            <p class="fc-desc">Gratis Ongkir Lebih Dari Rp. 30.000</p>
                         </div>
 
                     </li>
                     <li class="fc-info-item">
                         <i class="fa fa-recycle" aria-hidden="true"></i>
                         <div class="wrap-left-info">
-                            <h4 class="fc-name">Guarantee</h4>
-                            <p class="fc-desc">30 Days Money Back</p>
+                            <h4 class="fc-name">Jaminan</h4>
+                            <p class="fc-desc">Jaminan 30 Hari Uang Kembali</p>
                         </div>
 
                     </li>
                     <li class="fc-info-item">
                         <i class="fa fa-credit-card-alt" aria-hidden="true"></i>
                         <div class="wrap-left-info">
-                            <h4 class="fc-name">Safe Payment</h4>
-                            <p class="fc-desc">Safe your online payment</p>
+                            <h4 class="fc-name">Pembayaran Anda</h4>
+                            <p class="fc-desc">Amankan pembayaran Anda</p>
                         </div>
 
                     </li>
                     <li class="fc-info-item">
                         <i class="fa fa-life-ring" aria-hidden="true"></i>
                         <div class="wrap-left-info">
-                            <h4 class="fc-name">Online Suport</h4>
-                            <p class="fc-desc">We Have Support 24/7</p>
+                            <h4 class="fc-name">DUKUNGAN ONLINE</h4>
+                            <p class="fc-desc">Kami Memiliki Dukungan 24/7</p>
                         </div>
 
                     </li>
@@ -49,21 +49,21 @@
 
                     <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
                         <div class="wrap-footer-item">
-                            <h3 class="item-header">Contact Details</h3>
+                            <h3 class="item-header">DETAIL KONTAK</h3>
                             <div class="item-content">
                                 <div class="wrap-contact-detail">
                                     <ul>
                                         <li>
                                             <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                            <p class="contact-txt">45 Grand Central Terminal New York,NY 1017 United State USA</p>
+                                            <p class="contact-txt">Jl. Kelet Ploso KM 36, Kelet, Keling, Karang Anyar, Kelet, Kec. Keling, Kabupaten Jepara, Jawa Tengah 59454</p>
                                         </li>
                                         <li>
                                             <i class="fa fa-phone" aria-hidden="true"></i>
-                                            <p class="contact-txt">(+123) 456 789 - (+123) 666 888</p>
+                                            <p class="contact-txt">(+62) 823 806 733 21 - (+62) 858 677 703 43</p>
                                         </li>
                                         <li>
                                             <i class="fa fa-envelope" aria-hidden="true"></i>
-                                            <p class="contact-txt">Contact@yourcompany.com</p>
+                                            <p class="contact-txt">ahmadrisyfa123123@gmail.com</p>
                                         </li>											
                                     </ul>
                                 </div>
@@ -74,16 +74,16 @@
                     <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 
                         <div class="wrap-footer-item">
-                            <h3 class="item-header">Hot Line</h3>
+                            <h3 class="item-header">Jalur Telepon</h3>
                             <div class="item-content">
                                 <div class="wrap-hotline-footer">
-                                    <span class="desc">Call Us toll Free</span>
-                                    <b class="phone-number">(+123) 456 789 - (+123) 666 888</b>
+                                    <span class="desc">Hubungi Kami Lewat WhatsApp</span>
+                                    <b class="phone-number">082380673321</b>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="wrap-footer-item footer-item-second">
+                        {{-- <div class="wrap-footer-item footer-item-second">
                             <h3 class="item-header">Sign up for newsletter</h3>
                             <div class="item-content">
                                 <div class="wrap-newletter-footer">
@@ -93,18 +93,18 @@
                                     </form>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
 
                     </div>
 
                     <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12 box-twin-content ">
                         <div class="row">
                             <div class="wrap-footer-item twin-item">
-                                <h3 class="item-header">My Account</h3>
+                                <h3 class="item-header">AKUN SAYA</h3>
                                 <div class="item-content">
                                     <div class="wrap-vertical-nav">
                                         <ul>
-                                            <li class="menu-item"><a href="#" class="link-term">My Account</a></li>
+                                            <li class="menu-item"><a href="#" class="link-term">AKUN SAYA</a></li>
                                             <li class="menu-item"><a href="#" class="link-term">Brands</a></li>
                                             <li class="menu-item"><a href="#" class="link-term">Gift Certificates</a></li>
                                             <li class="menu-item"><a href="#" class="link-term">Affiliates</a></li>
@@ -182,47 +182,13 @@
             <div class="wrap-back-link">
                 <div class="container">
                     <div class="back-link-box">
-                        <h3 class="backlink-title">Quick Links</h3>
+                        <h3 class="backlink-title">Category All</h3>
                         <div class="back-link-row">
                             <ul class="list-back-link" >
-                                <li><span class="row-title">Mobiles:</span></li>
-                                <li><a href="#" class="redirect-back-link" title="mobile">Mobiles</a></li>
-                                <li><a href="#" class="redirect-back-link" title="yphones">YPhones</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Gianee Mobiles GL">Gianee Mobiles GL</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Mobiles Karbonn">Mobiles Karbonn</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Mobiles Viva">Mobiles Viva</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Mobiles Intex">Mobiles Intex</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Mobiles Micrumex">Mobiles Micrumex</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Mobiles Bsus">Mobiles Bsus</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Mobiles Samsyng">Mobiles Samsyng</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Mobiles Lenova">Mobiles Lenova</a></li>
+                                <li><span class="row-title">Category:</span></li>
+                                <li><a href="#" class="redirect-back-link" title="mobile"><livewire:frontend.search/></a></li>                                
                             </ul>
-
-                            <ul class="list-back-link" >
-                                <li><span class="row-title">Tablets:</span></li>
-                                <li><a href="#" class="redirect-back-link" title="Plesc YPads">Plesc YPads</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Samsyng Tablets" >Samsyng Tablets</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Qindows Tablets" >Qindows Tablets</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Calling Tablets" >Calling Tablets</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Micrumex Tablets" >Micrumex Tablets</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Lenova Tablets Bsus" >Lenova Tablets Bsus</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Tablets iBall" >Tablets iBall</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Tablets Swipe" >Tablets Swipe</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Tablets TVs, Audio" >Tablets TVs, Audio</a></li>
-                            </ul>
-
-                            <ul class="list-back-link" >
-                                <li><span class="row-title">Fashion:</span></li>
-                                <li><a href="#" class="redirect-back-link" title="Sarees Silk" >Sarees Silk</a></li>
-                                <li><a href="#" class="redirect-back-link" title="sarees Salwar" >sarees Salwar</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Suits Lehengas" >Suits Lehengas</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Biba Jewellery" >Biba Jewellery</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Rings Earrings" >Rings Earrings</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Diamond Rings" >Diamond Rings</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Loose Diamond Shoes" >Loose Diamond Shoes</a></li>
-                                <li><a href="#" class="redirect-back-link" title="BootsMen Watches" >BootsMen Watches</a></li>
-                                <li><a href="#" class="redirect-back-link" title="Women Watches" >Women Watches</a></li>
-                            </ul>
+                    
 
                         </div>
                     </div>
@@ -231,10 +197,12 @@
 
         </div>
 
+        </div>
+
         <div class="coppy-right-box">
             <div class="container">
                 <div class="coppy-right-item item-left">
-                    <p class="coppy-right-text">Copyright © 2020 Surfside Media. All rights reserved</p>
+                    <p class="coppy-right-text">Copyright © {{ date('Y') }} Ahmad Risyfa. All rights reserved</p>
                 </div>
                 <div class="coppy-right-item item-right">
                     <div class="wrap-nav horizontal-nav">

@@ -16,8 +16,8 @@
         <li class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
             <div class="product product-style-3 equal-elem ">
                 <div class="product-thumnail">
-                    <a href="{{ url('/collections/'.$category->slug )}}" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                        <figure><img src="{{ asset("$category->image") }}" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+                    <a href="{{ url('/collections/'.$category->slug )}}" title="{{ $category->name }}">
+                        <figure><img src="{{ asset("$category->image") }}" alt="{{ $category->name }}"></figure>
                     </a>
                 </div> 
                 <div class="product-info">

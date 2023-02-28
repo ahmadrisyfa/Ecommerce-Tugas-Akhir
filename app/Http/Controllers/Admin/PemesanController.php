@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Order;
+use App\Mail\InvoiceOrderMailable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Barryvdh\DomPDF\Facade\Pdf;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 
 class PemesanController extends Controller
 {
@@ -48,4 +51,30 @@ class PemesanController extends Controller
             return redirect('admin/pemesan/'.$id_pemesan)->with('message','Tidak Ada Pesanan Id tersebut');
         }
     }
-}
+    public function ViewInvoice(int $id_pemesan)
+    {
+     $pemesan = Order::findOrFail($id_pemesan);
+     return view('admin.invoice.generate-invoice',compact('pemesan'));
+    }
+    public function generateInvoice(int $id_pemesan)
+    {
+        $pemesan = Order::findOrFail($id_pemesan);
+        $data = ['pemesan' => $pemesan];
+        $pdf = Pdf::loadView('admin.invoice.generate-invoice', $data);
+        $todayDate = Carbon::now()->format('d-m-Y');
+        return $pdf->download('invoice-'.$pemesan->id.'-'.$todayDate.'.pdf');
+    }
+
+    
+    public function InvoiceEmail(int $id_pemesan)
+    {
+        try {
+        $pemesan = Order::findOrFail($id_pemesan);
+            Mail::to("$pemesan->email")->send(new InvoiceOrderMailable($pemesan));
+            return redirect('admin/orders/'.$id_pemesan)->with('message','Invoice Mail has been sent to '.$pemesan->email);
+        } catch(\Exception $e) {
+            return redirect('admin/pemesan/'.$id_pemesan)->with('message','silahkan coba lagi');
+        }
+
+    } 
+}  

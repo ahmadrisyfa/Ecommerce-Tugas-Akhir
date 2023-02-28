@@ -44,7 +44,8 @@ class ProductFormRequest extends FormRequest
             ],
             'small_description'=>[
                 'required',
-                'string'
+                'string',
+                'max:500'
             ],
             'description'=>[
                 'required',

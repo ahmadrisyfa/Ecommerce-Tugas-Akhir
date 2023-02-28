@@ -126,6 +126,10 @@
             <span class="nav-profile-name" style="text-transform:capitalize">{{ auth::user()->name }}</span>
           </a>
           <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+            <a href="{{ url('/') }}" class="dropdown-item">
+              <i class="mdi mdi-shopping text-primary"></i>
+              Go To Website
+            </a>
             <a class="dropdown-item">
               <i class="mdi mdi-settings text-primary"></i>
               Settings

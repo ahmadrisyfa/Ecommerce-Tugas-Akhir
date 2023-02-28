@@ -73,18 +73,26 @@
 							<li class="menu-item lang-menu menu-item-has-children parent" >
 								<a title="{{ auth()->user()->name }}" href="#" style="font-weight: bold;text-transform:capitalize"><i class="fa fa-user" style="margin-right: 2px"></i> {{ auth()->user()->name }}<i class="fa fa-angle-down" aria-hidden="true"></i></a>
 								<ul class="submenu lang" >
+									@if (auth()->user()->role_as == 1)										
+									<li class="menu-item">
+										<a href="{{ url('admin/dashboard') }}">Go To Dashboard</a>
+									</li>	
+									@endif
+									<li class="menu-item">
+										<a href="{{ url('profile') }}">Profile</a>
+									</li>	
 									<li class="menu-item" >
-										<a title="Pound (GBP)" href="{{ route('logout') }}"onclick="event.preventDefault();
-											document.getElementById('logout-form').submit();"><span class="img label-before"></span>
-							   				{{ __('Logout') }}</a>
+										<a title="Logout" href="{{ route('logout') }}"onclick="event.preventDefault();
+											document.getElementById('logout-form').submit();">
+							   				Logout</a>
 									</li>									
 								</ul>
 							</li>						
 					<form id="logout-form" action="{{ route('logout') }}" method="POST">
 					 @csrf
 				 </form>
-							@endguest
-						</ul>
+				</ul>
+				@endguest
 					</div>
 				</div>
 			</div>
@@ -95,37 +103,13 @@
 					<div class="wrap-logo-top left-section">
 						<a href="{{ url('/') }}" class="link-to-home"><img width="80px" src="{{ asset('/logo.png') }}" alt="mercado"></a>
 
-						{{-- <a href="{{ url('/') }}" class="link-to-home"><img src="{{ asset('template_website') }}/images/logo-top-1.png" alt="mercado"></a> --}}
 					</div>
 
 					<div class="wrap-search center-section">
 						<div class="wrap-search-form">
-							<form action="#" id="form-search-top" name="form-search-top">
-								<input type="text" name="search" value="" placeholder="Search here...">
-								<button form="form-search-top" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
-								<div class="wrap-list-cate">
-									<input type="hidden" name="product-cate" value="0" id="product-cate">
-									<a href="#" class="link-control">All Category</a>
-									<ul class="list-cate">
-										<li class="level-0">All Category</li>
-										<li class="level-1">-Electronics</li>
-										<li class="level-2">Batteries & Chargens</li>
-										<li class="level-2">Headphone & Headsets</li>
-										<li class="level-2">Mp3 Player & Acessories</li>
-										<li class="level-1">-Smartphone & Table</li>
-										<li class="level-2">Batteries & Chargens</li>
-										<li class="level-2">Mp3 Player & Headphones</li>
-										<li class="level-2">Table & Accessories</li>
-										<li class="level-1">-Electronics</li>
-										<li class="level-2">Batteries & Chargens</li>
-										<li class="level-2">Headphone & Headsets</li>
-										<li class="level-2">Mp3 Player & Acessories</li>
-										<li class="level-1">-Smartphone & Table</li>
-										<li class="level-2">Batteries & Chargens</li>
-										<li class="level-2">Mp3 Player & Headphones</li>
-										<li class="level-2">Table & Accessories</li>
-									</ul>
-								</div>
+							<form action="{{ url('search') }}" method="GET" id="form-search-top" name="form-search-top">
+								<input type="text" name="search" value="{{ Request::get('search') }}" style="font-weight: bold;color:black" placeholder="Silahkan Cari Sesuatu...">
+								<button form="form-search-top" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>							
 							</form>
 						</div>
 					</div>
@@ -165,11 +149,11 @@
 				<div class="header-nav-section">
 					<div class="container">
 						<ul class="nav menu-nav clone-main-menu" id="mercado_haead_menu" data-menuname="Sale Info" >
-							<li class="menu-item"><a href="#" class="link-term">Weekly Featured</a><span class="nav-label hot-label">hot</span></li>
-							<li class="menu-item"><a href="#" class="link-term">Hot Sale items</a><span class="nav-label hot-label">hot</span></li>
-							<li class="menu-item"><a href="#" class="link-term">Top new items</a><span class="nav-label hot-label">hot</span></li>
-							<li class="menu-item"><a href="#" class="link-term">Top Selling</a><span class="nav-label hot-label">hot</span></li>
-							<li class="menu-item"><a href="#" class="link-term">Top rated items</a><span class="nav-label hot-label">hot</span></li>
+							<li class="menu-item"><a href="#" class="link-term">UNGGULAN MINGGUAN</a><span class="nav-label hot-label">Viral</span></li>
+							<li class="menu-item"><a href="#" class="link-term">ITEM PENJUALAN PANAS</a><span class="nav-label hot-label">Viral</span></li>
+							<li class="menu-item"><a href="#" class="link-term">ITEM BARU TERATAS</a><span class="nav-label hot-label">Viral</span></li>
+							<li class="menu-item"><a href="#" class="link-term">TERLARIS</a><span class="nav-label hot-label">Viral</span></li>
+							{{-- <li class="menu-item"><a href="#" class="link-term">ITEM BERPERINGKAT TERATAS</a><span class="nav-label hot-label">hot</span></li> --}}
 						</ul>
 					</div>
 				</div>
@@ -183,7 +167,7 @@
 								<a href="{{ url('/collections') }}" class="link-term mercado-item-title">All Category</a>
 							</li>
 							<li class="menu-item">
-								<a href="shop.html" class="link-term mercado-item-title">Shop</a>
+								<a href="{{ url('/product-terbaru') }}" class="link-term mercado-item-title">Product Terbaru</a>
 							</li>
 							<li class="menu-item">
 								<a href="cart.html" class="link-term mercado-item-title">Cart</a>
