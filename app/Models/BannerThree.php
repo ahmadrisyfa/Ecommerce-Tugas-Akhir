@@ -5,10 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ImgBottomSlider extends Model
+class BannerThree extends Model
 {
     use HasFactory;
-
-    protected $table ='img_bottom_slider';
-    protected $guarded =['id'];
+    protected $table='banner_three';
+    protected $guarded=['id'];
 }

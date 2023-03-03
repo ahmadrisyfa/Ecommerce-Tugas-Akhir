@@ -170,7 +170,7 @@
 								<a href="{{ url('/product-terbaru') }}" class="link-term mercado-item-title">Product Terbaru</a>
 							</li>
 							<li class="menu-item">
-								<a href="cart.html" class="link-term mercado-item-title">Cart</a>
+								<a href="{{ url('/tentang-kami') }}" class="link-term mercado-item-title">Tentang Kami</a>
 							</li>
 							<li class="menu-item">
 								<a href="checkout.html" class="link-term mercado-item-title">Checkout</a>

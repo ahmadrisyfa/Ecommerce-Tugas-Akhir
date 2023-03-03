@@ -27,6 +27,9 @@ Route::get('/collections/{category_slug}', [App\Http\Controllers\Frontend\Fronte
 Route::get('/collections/{category_slug}/{product_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'productView']);
 Route::get('/product-terbaru', [App\Http\Controllers\Frontend\FrontendController::class, 'ProductTerbaru']);
 Route::get('/search', [App\Http\Controllers\Frontend\FrontendController::class, 'search']);
+Route::get('thank-you', [App\Http\Controllers\Frontend\FrontendController::class, 'thankyou']);
+Route::get('tentang-kami', [App\Http\Controllers\Frontend\FrontendController::class, 'TentangKami']);
+
 
 
 Route::middleware(['auth'])->group(function () {    
@@ -45,17 +48,24 @@ Route::middleware(['auth'])->group(function () {
     
 }); 
 
-Route::get('thank-you', [App\Http\Controllers\Frontend\FrontendController::class, 'thankyou']);
-
-
-
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
+
     Route::get('dashboard',[App\Http\Controllers\Admin\DashboardController::class, 'index']);
 
+    
+    Route::controller(App\Http\Controllers\Admin\TentangKamiController::class)->group(function (){
+        Route::get('/tentang-kami','index');
+        Route::get('/tentang-kami/create','create');
+        Route::post('/tentang-kami/create','store');
+        Route::get('/tentang-kami/{TentangKami}/edit','edit');
+        Route::put('/tentang-kami/{TentangKami}','update');
+        Route::get('/tentang-kami/{TentangKami}/delete','destroy');
+
+    });
     Route::controller(App\Http\Controllers\Admin\SliderController::class)->group(function (){
         Route::get('/sliders','index');
         Route::get('/sliders/create','create');
@@ -64,10 +74,36 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
         Route::put('sliders/{slider}','update');
         Route::get('sliders/{slider}/delete','destroy');
 
-
-
     });
 
+    Route::controller(App\Http\Controllers\Admin\BannerOneController::class)->group(function (){
+        Route::get('/banner-one','index');
+        Route::get('/banner-one/create','create');
+        Route::post('/banner-one/create','store');
+        Route::get('/banner-one/{banner}/edit','edit');
+        Route::put('/banner-one/{banner}/edit','update');
+        Route::get('/banner-one/{banner}/delete','destroy');
+    });
+
+    Route::controller(App\Http\Controllers\Admin\BannerTwoController::class)->group(function (){
+        Route::get('/banner-two','index');
+        Route::get('/banner-two/create','create');
+        Route::post('/banner-two/create','store');
+        Route::get('/banner-two/{BannerTwo}/edit','edit');
+        Route::put('/banner-two/{BannerTwo}/edit','update');
+        Route::get('/banner-two/{BannerTwo}/delete','destroy');
+    });
+
+    Route::controller(App\Http\Controllers\Admin\BannerThreeController::class)->group(function (){
+        Route::get('/banner-three','index');
+        Route::get('/banner-three/create','create');
+        Route::post('/banner-three/create','store');
+        Route::get('/banner-three/{BannerThree}/edit','edit');
+        Route::put('/banner-three/{BannerThree}/edit','update');
+        Route::get('/banner-three/{BannerThree}/delete','destroy');
+    });
+    
+    
     
     // Route Category
     Route::controller(App\Http\Controllers\Admin\CategoryController::class)->group(function (){

@@ -180,19 +180,7 @@
             </div>
 
             <div class="wrap-back-link">
-                <div class="container">
-                    <div class="back-link-box">
-                        <h3 class="backlink-title">Category All</h3>
-                        <div class="back-link-row">
-                            <ul class="list-back-link" >
-                                <li><span class="row-title">Category:</span></li>
-                                <li><a href="#" class="redirect-back-link" title="mobile"><livewire:frontend.search/></a></li>                                
-                            </ul>
-                    
-
-                        </div>
-                    </div>
-                </div>
+              
             </div>
 
         </div>
@@ -207,7 +195,7 @@
                 <div class="coppy-right-item item-right">
                     <div class="wrap-nav horizontal-nav">
                         <ul>
-                            <li class="menu-item"><a href="about-us.html" class="link-term">About us</a></li>								
+                            <li class="menu-item"><a href="{{ url('/tentang-kami') }}" class="link-term">Tentang kami</a></li>								
                             <li class="menu-item"><a href="privacy-policy.html" class="link-term">Privacy Policy</a></li>
                             <li class="menu-item"><a href="terms-conditions.html" class="link-term">Terms & Conditions</a></li>
                             <li class="menu-item"><a href="return-policy.html" class="link-term">Return Policy</a></li>								

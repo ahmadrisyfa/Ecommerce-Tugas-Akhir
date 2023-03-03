@@ -5,6 +5,10 @@ namespace App\Http\Controllers\Frontend;
 use App\Models\Slider;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\BannerOne;
+use App\Models\BannerTwo;
+use App\Models\BannerThree;
+use App\Models\TentangKami;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
@@ -19,7 +23,11 @@ class FrontendController extends Controller
         $category = Category::where('status','0')->inRandomOrder()->get();
         $tanggalHariIni = Carbon::now()->format('d-m-y');
         $productHariIni = Product::whereDay('created_at', $tanggalHariIni)->count();
-        return view('frontend.index',compact('sliders','productTerbaru','yang_mungkin_anda_suka','category','productHariIni'));
+        $banner_one = BannerOne::where('status_image_banner_One','0')->take(1)->latest()->get();
+        $banner_two = BannerTwo::where('status_image_banner_two','0')->take(1)->latest()->get();
+        $banner_three = BannerThree::where('status_image_banner_three','0')->take(1)->latest()->get();
+
+        return view('frontend.index',compact('sliders','productTerbaru','yang_mungkin_anda_suka','category','productHariIni','banner_one','banner_two','banner_three'));
     }
 
     public function categories()
@@ -75,5 +83,11 @@ class FrontendController extends Controller
           return redirect()->back()->with('message','Tidak Di Temukan produk Yang Anda cari');
         }
         
+    }
+
+    public function TentangKami()
+    {
+        $data = TentangKami::all();
+        return view('frontend.tentang_kami.index',compact('data'));
     }
 }

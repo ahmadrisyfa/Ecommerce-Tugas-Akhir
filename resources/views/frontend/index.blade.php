@@ -21,16 +21,21 @@
 </div>
 {{-- Batas --}}
 <div class="wrap-banner style-twin-default">
+    @if ($banner_one)
+    @foreach ($banner_one as $value)
     <div class="banner-item">
         <a href="#" class="link-banner banner-effect-1">
-            <figure><img src="{{ asset('template_website') }}/images/home-1-banner-1.jpg" alt="" width="580" height="190"></figure>
+            <figure><img src="{{ asset('storage/'.$value->image_banner_one_1) }}" alt="" style="width:580px;height:190px;overlow:hidden"></figure>
         </a>
     </div>
     <div class="banner-item">
         <a href="#" class="link-banner banner-effect-1">
-            <figure><img src="{{ asset('template_website') }}/images/home-1-banner-2.jpg" alt="" width="580" height="190"></figure>
+            <figure><img src="{{ asset('storage/'.$value->image_banner_one_2) }}" alt="" style="width:580px;height:190px;overlow:hidden"></figure>
         </a>
     </div>
+    @endforeach
+    @endif
+
 </div>
 {{-- Batas --}}
 <div class="wrap-show-advance-info-box style-1 has-countdown">
@@ -189,7 +194,11 @@
     <h3 class="title-box">Category</h3>
     <div class="wrap-top-banner">
         <a href="{{ url('collections') }}" class="link-banner banner-effect-2">
-            <figure><img src="{{ asset('template_website') }}/images/2-smartphone-laptop-banner-1.jpg" width="1170" height="240" alt=""></figure>
+        @if ($banner_one)
+            @foreach ($banner_two as $value)            
+            <figure><img src="{{ asset('storage/'.$value->image_banner_two) }}"  style="width: 1170px;height:240px;" alt=""></figure>
+            @endforeach
+        @endif
         </a>
     </div> 
 
@@ -239,7 +248,11 @@
     <h3 class="title-box">Product Terbaru</h3>
     <div class="wrap-top-banner">
         <a href="{{ url('product-terbaru') }}" class="link-banner banner-effect-2">
-            <figure><img src="{{ asset('template_website') }}/images/digital-electronic-banner.jpg" width="1170" height="240" alt=""></figure>
+            @if ($banner_three)            
+                @foreach ($banner_three as $value)            
+                <figure><img src="{{ asset('storage/'.$value->image_banner_three) }}" style="width:1170px;height:240px" alt=""></figure>
+                @endforeach
+            @endif
         </a>
     </div>
 

@@ -6,33 +6,18 @@
           <span class="menu-title">Dashboard</span>
         </a>
       </li>  
-      <li class="nav-item">
-        <a class="nav-link" data-bs-toggle="collapse" href="#ui-category" aria-expanded="false" aria-controls="ui-category">
+      <li class="nav-item" {{ Request::is('admin/category') ? 'active':''}}>
+        <a class="nav-link" href="{{ url('admin/category') }}">
           <i class="mdi mdi-google-circles-communities menu-icon"></i>
           <span class="menu-title">Category</span>
-          <i class="menu-arrow"></i>
-        </a>  
-      <div class="collapse" id="ui-category">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="{{ url('admin/category/create') }}">Add Category</a></li>
-          <li class="nav-item"> <a class="nav-link" href="{{ url('admin/category') }}">View Category</a></li>
-        </ul>
-      </div>
+        </a>
       </li>  
-      <li class="nav-item">
-        <a class="nav-link" data-bs-toggle="collapse" href="#ui-colors" aria-expanded="false" aria-controls="ui-colors">
-          <i class="mdi mdi mdi-arrange-send-backward menu-icon"></i>
+      <li class="nav-item" {{ Request::is('admin/colors') ? 'active':''}}>
+        <a class="nav-link" href="{{ url('admin/colors') }}">
+          <i class="mdi mdi-invert-colors menu-icon"></i>
           <span class="menu-title">Colors</span>
-          <i class="menu-arrow"></i>
-        </a>  
-      <div class="collapse" id="ui-colors">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="{{ url('admin/colors/create') }}">Add Colors</a></li>
-          <li class="nav-item"> <a class="nav-link" href="{{ url('admin/colors') }}">View Colors</a></li>
-        </ul>
-      </div>
-      </li>
-
+        </a>
+      </li>   
       <li class="nav-item">
         <a class="nav-link" data-bs-toggle="collapse" href="#ui-sliders" aria-expanded="false" aria-controls="ui-sliders">
           <i class="mdi mdi mdi-arrange-send-backward menu-icon"></i>
@@ -41,8 +26,10 @@
         </a>  
       <div class="collapse" id="ui-sliders">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="{{ url('admin/sliders/create') }}">Add Sliders</a></li>
-          <li class="nav-item"> <a class="nav-link" href="{{ url('admin/sliders') }}">View Sliders</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{ url('admin/sliders') }}">Sliders</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{ url('admin/banner-one') }}">Banner One</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{ url('admin/banner-two') }}">Banner Two</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{ url('admin/banner-three') }}">Banner Three</a></li>
         </ul>
       </div>
       </li>
@@ -66,21 +53,18 @@
           </ul>
         </div>
       </li>
-
-      <li class="nav-item">
-        <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+      <li class="nav-item" {{ Request::is('admin/users') ? 'active':''}}>
+        <a class="nav-link" href="{{ url('admin/users') }}">
           <i class="mdi mdi-account menu-icon"></i>
           <span class="menu-title">User</span>
-          <i class="menu-arrow"></i>
         </a>
-        <div class="collapse" id="ui-basic">
-          <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="{{ url('/admin/users/create') }}">Tambah User</a></li>
-            <li class="nav-item"> <a class="nav-link" href="{{ url('/admin/users') }}">View User</a></li>
-          </ul>
-        </div>
-      </li>
-
+      </li>    
+      <li class="nav-item" {{ Request::is('admin/tentang-kami') ? 'active':''}}>
+        <a class="nav-link" href="{{ url('admin/tentang-kami') }}">
+          <i class="mdi mdi-airballoon menu-icon"></i>
+          <span class="menu-title">Tentang Kami</span>
+        </a>
+      </li>  
       <li class="nav-item" {{ Request::is('admin/pemesan') ? 'active':''}}>
         <a class="nav-link" href="{{ url('admin/pemesan') }}">
           <i class="mdi mdi-television-guide menu-icon"></i>
