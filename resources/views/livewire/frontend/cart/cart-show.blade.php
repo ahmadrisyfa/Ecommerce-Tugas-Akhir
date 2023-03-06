@@ -26,7 +26,7 @@
                                 @endif  
                             </div>
                             <div class="product-name">
-                                <a style="text-transform: capitalize" class="link-to-product" href="{{ url('/collections/'.$cartItem->product->category->slug.'/'.$cartItem->product->slug) }}">{{ $cartItem->product->name }} [{{ $cartItem->product->brand }}]
+                                <a style="text-transform: capitalize" class="link-to-product" href="{{ url('/collections/'.$cartItem->product->category->slug.'/'.$cartItem->product->slug) }}">{{ $cartItem->product->name }}
                                     @if ($cartItem->productColor)
                                         @if ($cartItem->productColor->color)
                                    -<span style="color:#FF2832"> With Color: {{ $cartItem->productColor->color->name }}</span>
@@ -63,7 +63,7 @@
                         @empty
 						<div class="text-center">
 							<h4>Tidak Ada Item Dalam Keranjang</h4>
-							<a href="{{ url('collections') }}" class="btn" style="background-color:#F59524;color:white;font-weight:bold">Berbelanja Sekarang</a>
+							<a href="{{ url('collections') }}" class="btn" style="background-color:#FF2832;color:white;font-weight:bold">Berbelanja Sekarang</a>
 						</div>
                             {{-- <div>No Cart items Available</div> --}}
                         @endforelse

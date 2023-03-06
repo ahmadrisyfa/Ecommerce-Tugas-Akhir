@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use auth;
+use App\Models\Order;
 use App\Models\Slider;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\BannerOne;
 use App\Models\BannerTwo;
 use App\Models\BannerThree;
+use App\Models\HubungiKami;
 use App\Models\TentangKami;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -90,4 +93,37 @@ class FrontendController extends Controller
         $data = TentangKami::all();
         return view('frontend.tentang_kami.index',compact('data'));
     }
+
+    public function HubungiKami()
+    {
+        return view('frontend.hubungi_kami.index');
+    }
+
+    public function HubungiKamiStore(Request $request)
+    {
+        $data = new HubungiKami;
+        $data->user_id = auth::user()->id;
+        $data->comment = $request->comment;
+        $data->save();
+        return redirect()->back()->with('message','Berhasil Mengirim Pesan');
+    }
+    public function RiwayatPesanan()
+    {
+        $ProductTerkait = Product::inRandomOrder()->take(15)->get();
+        $data = Order::where('user_id',auth::user()->id)->latest()->get();
+        return view('frontend.riwayat_pesanan.index',compact('ProductTerkait','data'));
+        // dd($data);
+    }
+    public function RiwayatPesananShow(string $order_tracking_no)
+    {
+        $ProductTerkait = Product::inRandomOrder()->take(15)->get();
+        $pemesan = Order::where('tracking_no',$order_tracking_no)->first();
+        if ($pemesan) {
+            return view('frontend.riwayat_pesanan.view',compact('pemesan','ProductTerkait'));
+        }
+        else {
+            return redirect('riwayat-pesanan')->with('message','Tidak Ada Data tersebut');
+        }
+    }
+
 }

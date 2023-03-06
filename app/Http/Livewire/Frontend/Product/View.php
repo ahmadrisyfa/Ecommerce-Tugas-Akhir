@@ -2,6 +2,8 @@
 
 namespace App\Http\Livewire\Frontend\Product;
 use App\Models\Cart;
+use App\Models\User;
+use App\Models\Review;
 use App\Models\Product;
 use Livewire\Component;
 use App\Models\Wishlists;
@@ -215,7 +217,12 @@ class View extends Component
     {
         
         $this->productspopular = Product::inRandomOrder()->where('id', '!=', $this->product->id)->take('5')->get();
+        $this->Review = Review::where('product_id', '=', $this->product->id)->latest()->get();
+        $this->Review_Komen = Review::where('product_id', '=', $this->product->id)->where('user_id', '=',auth::user()->id ?? '')->exists();
+        $this->jumlah_review = Review::where('product_id', '=', $this->product->id)->count();
 
+        
+        
         $this->ProductTerkait = Product::inRandomOrder()->where('id', '!=', $this->product->id)->take('15')->get();
         return view('livewire.frontend.product.view',[
             'category' => $this->category,

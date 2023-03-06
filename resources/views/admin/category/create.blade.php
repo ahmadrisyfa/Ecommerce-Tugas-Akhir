@@ -50,14 +50,14 @@
                             <label for="meta_title">meta title</label>
                             <input type="text" class="form-control" name="meta_title">
                         </div>
-                        <div class="col-md-12 mb-3">
+                        {{-- <div class="col-md-12 mb-3">
                             <label for="meta_keyword">meta keyword</label>
                             <textarea class="form-control" name="meta_keyword" rows="3"></textarea>
                         </div>
                         <div class="col-md-12 mb-3">
                             <label for="meta_description">meta description</label>
                             <textarea class="form-control" name="meta_description" rows="3"></textarea>
-                        </div>                                               
+                        </div>                                                --}}
                         <div class="py-2">
                             <a href="{{ url('admin/category') }}" style="font-weight:bold;color:#2f2d2d" class="btn btn-primary"> Back</a>
                             <button style="font-weight:bold;color:#2f2d2d" class="btn btn-success" type="submit">Submit</button>

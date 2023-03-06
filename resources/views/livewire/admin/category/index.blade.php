@@ -1,9 +1,8 @@
-
 <div class="row">
     <div class="col-md-12">
-        @if (session('message'))    
-            <div class="alert alert-success">{{ session('message') }}</div>            
-        @endif
+        @if (session('message'))        
+        <p class="alert alert-success text-center">{{ session('message') }}</p>
+        @endif 
         <div class="card">
             <div class="card-header">
                 <h3>Category

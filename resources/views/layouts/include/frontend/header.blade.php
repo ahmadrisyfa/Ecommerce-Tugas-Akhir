@@ -81,6 +81,9 @@
 									<li class="menu-item">
 										<a href="{{ url('profile') }}">Profile</a>
 									</li>	
+									<li class="menu-item">
+										<a href="{{ url('riwayat-pesanan') }}">Riwayat Pesanan</a>
+									</li>	
 									<li class="menu-item" >
 										<a title="Logout" href="{{ route('logout') }}"onclick="event.preventDefault();
 											document.getElementById('logout-form').submit();">
@@ -132,7 +135,8 @@
 									<span class="title">CART</span>
 								</div>
 							</a>
-						</div>
+						</div>					
+
 						<div class="wrap-icon-section show-up-after-1024">
 							<a href="#" class="mobile-navigation">
 								<span></span>
@@ -166,17 +170,17 @@
 							<li class="menu-item">
 								<a href="{{ url('/collections') }}" class="link-term mercado-item-title">All Category</a>
 							</li>
+							{{-- <li class="menu-item">
+								<a href="{{ url('/brands') }}" class="link-term mercado-item-title">ALl Brands</a>
+							</li> --}}
 							<li class="menu-item">
 								<a href="{{ url('/product-terbaru') }}" class="link-term mercado-item-title">Product Terbaru</a>
 							</li>
 							<li class="menu-item">
 								<a href="{{ url('/tentang-kami') }}" class="link-term mercado-item-title">Tentang Kami</a>
-							</li>
+							</li>							
 							<li class="menu-item">
-								<a href="checkout.html" class="link-term mercado-item-title">Checkout</a>
-							</li>
-							<li class="menu-item">
-								<a href="contact-us.html" class="link-term mercado-item-title">Contact Us</a>
+								<a href="{{ url('hubungi-kami') }}" class="link-term mercado-item-title">Hubungi Kami</a>
 							</li>																	
 						</ul>
 					</div>

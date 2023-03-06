@@ -13,7 +13,7 @@ class CheckoutShow extends Component
 {
     public $carts, $totalProductAmount = 0;
 
-    public $fullname, $email, $phone, $pincode, $address, $payment_mode = NULL, $payment_id = NULL;
+    public $fullname, $email, $phone, $address, $payment_mode = NULL, $payment_id = NULL;
 
     public function rules()
     {
@@ -21,7 +21,6 @@ class CheckoutShow extends Component
             'fullname' =>'required|string|max:121',
             'email' =>'required|email|max:121',
             'phone' =>'required|string|max:13|min:10',
-            'pincode' =>'required|string|max:6|min:6',
             'address' =>'required|string|max:500',
 
         ];
@@ -36,7 +35,6 @@ class CheckoutShow extends Component
             'fullname' => $this->fullname,
             'email' => $this->email,
             'phone' => $this->phone,
-            'pincode' => $this->pincode,
             'address' => $this->address,
             'status_message' => 'in Progress',
             'payment_mode' => $this->payment_mode,
@@ -97,6 +95,10 @@ class CheckoutShow extends Component
     {
         $this->fullname = auth()->user()->name;
         $this->email = auth()->user()->email;
+        $this->phone = auth()->user()->userdetail->phone ?? '';
+        $this->address = auth()->user()->userdetail->address ?? '';
+
+
      
 
         $this->ProductTerkait = Product::inRandomOrder()->take('15')->get();

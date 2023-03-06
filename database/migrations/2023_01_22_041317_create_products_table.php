@@ -29,8 +29,8 @@ return new class extends Migration
             $table->tinyInteger('status')->default('0')->comment('1=sembunyikan,0=tampilkan');
 
             $table->string('meta_title')->nullable();
-            $table->mediumText('meta_keyword')->nullable();
-            $table->mediumText('meta_description')->nullable();
+            // $table->mediumText('meta_keyword')->nullable();
+            // $table->mediumText('meta_description')->nullable();
 
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();

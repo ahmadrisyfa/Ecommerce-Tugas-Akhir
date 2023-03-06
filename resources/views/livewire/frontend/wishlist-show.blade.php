@@ -22,7 +22,7 @@
 							<a href="{{ url('/collections/'.$wishlistItem->product->category->slug.'/'.$wishlistItem->product->slug) }}"><figure><img src="{{ $wishlistItem->product->productImages[0]->image }}" alt=""></figure></a>
 							</div>
 							<div class="product-name">
-								<a class="link-to-product" href="{{ url('/collections/'.$wishlistItem->product->category->slug.'/'.$wishlistItem->product->slug) }}">{{ $wishlistItem->product->name }} [{{ $wishlistItem->product->brand }}]</a>
+								<a class="link-to-product" href="{{ url('/collections/'.$wishlistItem->product->category->slug.'/'.$wishlistItem->product->slug) }}">{{ $wishlistItem->product->name }}</a>
 							</div>
 							<div class="price-field produtc-price"><p class="price">@currency($wishlistItem->product->selling_price)</p></div>
 							{{-- <div class="quantity">

@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('title','Tentang kami')
 @section('content')
 <main id="main" class="main-site">
@@ -119,7 +118,7 @@
                         <div class="team-member equal-elem">
                             <div class="media">
                                 <a href="#" title="{{ $value->nama }}">
-                                    <figure><img src="{{ asset('storage/'.$value->image) }}" style="height:300px" alt="{{ $value->nama }}"></figure>
+                                    <figure><img src="{{ asset('storage/'.$value->image) }}" style="max-height:350px;overflow:hidden" alt="{{ $value->nama }}"></figure>
                                 </a>
                             </div>
                             <div class="info">

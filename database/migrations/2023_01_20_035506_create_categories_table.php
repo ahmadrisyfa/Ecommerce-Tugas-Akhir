@@ -21,8 +21,8 @@ return new class extends Migration
             $table->string('image')->nullable();
 
             $table->string('meta_title');
-            $table->string('meta_keyword');
-            $table->mediumText('meta_description');
+            // $table->string('meta_keyword');
+            // $table->mediumText('meta_description');
 
             $table->tinyInteger('status')->default('0')->comment('0=tampilkan,1=sembunyikan');
             $table->timestamps();

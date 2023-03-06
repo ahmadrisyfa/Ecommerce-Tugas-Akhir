@@ -71,5 +71,11 @@
           <span class="menu-title">Pemesan</span>
         </a>
       </li>
+      <li class="nav-item" {{ Request::is('admin/hubungi-kami') ? 'active':''}}>
+        <a class="nav-link" href="{{ url('admin/hubungi-kami') }}">
+          <i class="mdi mdi-message-reply-text menu-icon"></i>
+          <span class="menu-title">Message</span>
+        </a>
+      </li>
     </ul>
   </nav>

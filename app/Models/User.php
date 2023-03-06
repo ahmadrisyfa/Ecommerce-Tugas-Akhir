@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Review;
 use App\Models\ProfileUser;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
@@ -13,6 +14,13 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    public function getPictureAttribute($value){
+        if($value){
+            return asset('fotoprofil/'.$value);
+        }else{
+            return asset('fotoprofil/user.png');
+        }
+    }
     /**
      * The attributes that are mass assignable.
      *
@@ -22,7 +30,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'role_as'
+        'role_as',
+        'picture'
     ];
 /**
  * Get the userDetail associated with the User
@@ -32,6 +41,16 @@ class User extends Authenticatable
 public function userDetail()
 {
     return $this->hasOne(ProfileUser::class, 'user_id', 'id');
+}
+public function review()
+{        
+        return $this->hasMany(Review::class, 'category_id', 'id');
+  
+}
+public function hubungiKami()
+{        
+        return $this->hasMany(HubungiKami::class, 'category_id', 'id');
+  
 }
     /**
      * The attributes that should be hidden for serialization.

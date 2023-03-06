@@ -78,22 +78,24 @@
                             <div class="item-content">
                                 <div class="wrap-hotline-footer">
                                     <span class="desc">Hubungi Kami Lewat WhatsApp</span>
-                                    <b class="phone-number">082380673321</b>
+                                    <b class="phone-number">082 380 673 321</b>
+                                    <b class="phone-number">085 867 770 343</b>
+
                                 </div>
                             </div>
                         </div>
 
-                        {{-- <div class="wrap-footer-item footer-item-second">
-                            <h3 class="item-header">Sign up for newsletter</h3>
+                        <div class="wrap-footer-item footer-item-second">
+                            <h3 class="item-header">Hubungi Kami</h3>
                             <div class="item-content">
                                 <div class="wrap-newletter-footer">
-                                    <form action="#" class="frm-newletter" id="frm-newletter">
-                                        <input type="email" class="input-email" name="email" value="" placeholder="Enter your email address">
-                                        <button class="btn-submit">Subscribe</button>
-                                    </form>
+                                    {{-- <form action="#" class="frm-newletter" id="frm-newletter"> --}}
+                                        <input type="email" class="input-email" name="email" value="{{ auth::user()->email ?? '' }}" placeholder="Enter your email address">
+                                        <a href="{{ url('/hubungi-kami') }}" class="btn-submit">Submit</a>
+                                    {{-- </form> --}}
                                 </div>
                             </div>
-                        </div> --}}
+                        </div>
 
                     </div>
 
@@ -104,7 +106,7 @@
                                 <div class="item-content">
                                     <div class="wrap-vertical-nav">
                                         <ul>
-                                            <li class="menu-item"><a href="#" class="link-term">AKUN SAYA</a></li>
+                                            <li class="menu-item"><a href="{{ url('/profile') }}" class="link-term">Akun Saya</a></li>
                                             <li class="menu-item"><a href="#" class="link-term">Brands</a></li>
                                             <li class="menu-item"><a href="#" class="link-term">Gift Certificates</a></li>
                                             <li class="menu-item"><a href="#" class="link-term">Affiliates</a></li>

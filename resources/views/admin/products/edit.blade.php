@@ -125,13 +125,13 @@
                             <label style="padding-bottom: 5px;font-weight:300">Meta Title</label>
                             <input type="text" name="meta_title" value="{{ old('meta_title', $product->meta_title)}}" id="meta_title" class="form-control">
                         </div>
-                        <div class="mb-3">
+                        {{-- <div class="mb-3">
                             <label style="padding-bottom: 5px;font-weight:300">Meta Description</label>
                             <textarea type="text" name="meta_description" id="meta_description" class="form-control" rows="4">{{ old('meta_description', $product->meta_description)}}</textarea>
                         </div>  <div class="mb-3">
                             <label style="padding-bottom: 5px;font-weight:300">Meta Keyword</label>
                             <textarea type="text" name="meta_keyword"  id="meta_keyword" class="form-control" rows="4">{{ old('meta_keyword', $product->meta_keyword)}}</textarea>
-                        </div>
+                        </div> --}}
 
                     </div>
                     <div class="tab-pane fade border p-3" id="details-tab-pane" role="tabpanel" aria-labelledby="details-tab" tabindex="0">

@@ -16,9 +16,10 @@ return new class extends Migration
         Schema::create('profile_user', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id')->unique();
-            $table->integer('phone');
-            $table->integer('pin_code');
+            $table->string('phone');
+            // $table->string('pin_code');
             $table->text('address');
+            $table->string('picture')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

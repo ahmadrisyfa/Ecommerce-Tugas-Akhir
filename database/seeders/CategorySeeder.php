@@ -26,9 +26,6 @@ class CategorySeeder extends Seeder
     		'description' =>$faker->sentence($nbWords = 30, $variableNbWords = true),
             'image' => 'uploads/category/digital_05.jpg',
     		'meta_title' =>$faker->sentence($nbWords = 8, $variableNbWords = true),
-            'meta_keyword' =>$faker->sentence($nbWords = 8, $variableNbWords = true),
-            'meta_description' =>$faker->sentence($nbWords = 8, $variableNbWords = true),
-
         ]);
         Category::create([
             'name' => 'Kaos Polos',
@@ -36,9 +33,6 @@ class CategorySeeder extends Seeder
     		'description' =>$faker->sentence($nbWords = 3, $variableNbWords = true),
             'image' => 'uploads/category/fashion_07.jpg',
     		'meta_title' =>$faker->sentence($nbWords = 8, $variableNbWords = true),
-            'meta_keyword' =>$faker->sentence($nbWords = 8, $variableNbWords = true),
-            'meta_description' =>$faker->sentence($nbWords = 8, $variableNbWords = true),
-
         ]);
         Category::create([
             'name' => 'Jacket Coach',
@@ -46,9 +40,6 @@ class CategorySeeder extends Seeder
     		'description' =>$faker->sentence($nbWords = 3, $variableNbWords = true),
             'image' => 'uploads/category/fashion_09.jpg',
     		'meta_title' =>$faker->sentence($nbWords = 8, $variableNbWords = true),
-            'meta_keyword' =>$faker->sentence($nbWords = 8, $variableNbWords = true),
-            'meta_description' =>$faker->sentence($nbWords = 8, $variableNbWords = true),
-
         ]);
         Category::create([
             'name' => 'Tas Sekolah',
@@ -56,9 +47,6 @@ class CategorySeeder extends Seeder
     		'description' =>$faker->sentence($nbWords = 3, $variableNbWords = true),
             'image' => 'uploads/category/fashion_02.jpg',
     		'meta_title' =>$faker->sentence($nbWords = 8, $variableNbWords = true),
-            'meta_keyword' =>$faker->sentence($nbWords = 8, $variableNbWords = true),
-            'meta_description' =>$faker->sentence($nbWords = 8, $variableNbWords = true),
-
         ]);
         Category::create([
             'name' => 'Laptop',
@@ -66,9 +54,6 @@ class CategorySeeder extends Seeder
     		'description' =>$faker->sentence($nbWords = 3, $variableNbWords = true),
             'image' => 'uploads/category/digital_14.jpg',
     		'meta_title' =>$faker->sentence($nbWords = 8, $variableNbWords = true),
-            'meta_keyword' =>$faker->sentence($nbWords = 8, $variableNbWords = true),
-            'meta_description' =>$faker->sentence($nbWords = 8, $variableNbWords = true),
-
         ]);
         Category::create([
             'name' => 'Televisi',
@@ -76,9 +61,6 @@ class CategorySeeder extends Seeder
     		'description' =>$faker->sentence($nbWords = 3, $variableNbWords = true),
             'image' => 'uploads/category/digital_08.jpg',
     		'meta_title' =>$faker->sentence($nbWords = 8, $variableNbWords = true),
-            'meta_keyword' =>$faker->sentence($nbWords = 8, $variableNbWords = true),
-            'meta_description' =>$faker->sentence($nbWords = 8, $variableNbWords = true),
-
         ]);
         Category::create([
             'name' => 'Lampu',
@@ -86,9 +68,6 @@ class CategorySeeder extends Seeder
     		'description' =>$faker->sentence($nbWords = 3, $variableNbWords = true),
             'image' => 'uploads/category/furniture_07.jpg',
     		'meta_title' =>$faker->sentence($nbWords = 8, $variableNbWords = true),
-            'meta_keyword' =>$faker->sentence($nbWords = 8, $variableNbWords = true),
-            'meta_description' =>$faker->sentence($nbWords = 8, $variableNbWords = true),
-
         ]);
         Category::create([
             'name' => 'Kasur',
@@ -96,9 +75,6 @@ class CategorySeeder extends Seeder
     		'description' =>$faker->sentence($nbWords = 3, $variableNbWords = true),
             'image' => 'uploads/category/furniture_06.jpg',
     		'meta_title' =>$faker->sentence($nbWords = 8, $variableNbWords = true),
-            'meta_keyword' =>$faker->sentence($nbWords = 8, $variableNbWords = true),
-            'meta_description' =>$faker->sentence($nbWords = 8, $variableNbWords = true),
-
         ]);
         Category::create([
             'name' => 'Kursi',
@@ -106,9 +82,6 @@ class CategorySeeder extends Seeder
     		'description' =>$faker->sentence($nbWords = 3, $variableNbWords = true),
             'image' => 'uploads/category/furniture_05.jpg',
     		'meta_title' =>$faker->sentence($nbWords = 8, $variableNbWords = true),
-            'meta_keyword' =>$faker->sentence($nbWords = 8, $variableNbWords = true),
-            'meta_description' =>$faker->sentence($nbWords = 8, $variableNbWords = true),
-
         ]);
         Category::create([
             'name' => 'Obat - Obatan',
@@ -116,9 +89,6 @@ class CategorySeeder extends Seeder
     		'description' =>$faker->sentence($nbWords = 3, $variableNbWords = true),
             'image' => 'uploads/category/organics_spa_4.jpg',
     		'meta_title' =>$faker->sentence($nbWords = 8, $variableNbWords = true),
-            'meta_keyword' =>$faker->sentence($nbWords = 8, $variableNbWords = true),
-            'meta_description' =>$faker->sentence($nbWords = 8, $variableNbWords = true),
-
         ]);
 
 

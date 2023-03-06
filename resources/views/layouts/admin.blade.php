@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Dashboard | KirunStore </title>
     <style>
         label{
             text-transform: capitalize;
@@ -25,6 +25,7 @@
     <!-- endinject -->
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"rel="stylesheet"/>
     @stack('css')
+    @yield('css')
     <link rel="shortcut icon" href="{{ asset('logo.png') }}" />
     @livewireStyles
     <style>

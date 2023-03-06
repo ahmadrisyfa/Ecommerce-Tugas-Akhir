@@ -1,73 +1,3 @@
-@section('css')
-	<style>
-		.radio-kirun {
-  /* display: block; */
-  position: relative;
-  padding-left: 25px;
-  padding-right: 10px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 10px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-/* Hide the browser's default radio button */
-.radio-kirun input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
-
-/* Create a custom radio button */
-.radio-centang-kirun {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 20px;
-  width: 20px;
-  background-color: #eee;
-  border-radius: 50%;
-}
-
-/* On mouse-over, add a grey background color */
-.radio-kirun:hover input ~ .radio-centang-kirun {
-  background-color: #ccc;
-}
-
-/* When the radio button is checked, add a blue background */
-.radio-kirun input:checked ~ .radio-centang-kirun {
-  background-color: #FF2732;
-}
-
-/* Create the indicator (the dot/circle - hidden when not checked) */
-.radio-centang-kirun:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the indicator (dot/circle) when checked */
-.radio-kirun input:checked ~ .radio-centang-kirun:after {
-  display: block;
-}
-
-/* Style the indicator (dot/circle) */
-.radio-kirun .radio-centang-kirun:after {
- 	top: 6px;
-	left: 6px;
-	width: 8px;
-	height: 8px;
-	border-radius: 50%;
-	background: white;
-}
-.krn{
-	color: #FF2732
-}
-	</style>
-@endsection
 <div class="detail page">
     <main id="main" class="main-site">
 
@@ -81,14 +11,16 @@
 					
 					<li class="item-link"><span>{{ $product->name }}</span></li>
 				</ul>
-			</div>
-			{{-- @if (session()->has('message'))
-			<div class="alert alert-success">
-			   {{ session('message') }}
-			</div>				
-			@endif --}}
+			</div>			
 			<div class="row">
 
+				@if(session()->has('message'))
+				<div class="alert alert-success alert-dismissible " style="text-align: center" role="alert">
+					{{-- <button type="button" class="close" data-dismiss="alert" aria-label="Close"> --}}
+						{{-- <span aria-hidden="true">×</span></button> --}}
+					<strong><i class="fa fa-check"></i> {{ session('message') }}</strong>
+				</div>
+				@endif
 				<div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 main-content-area">
 					<div class="wrap-product-detail">
 						<div class="detail-media">
@@ -109,14 +41,14 @@
 						 	</div>
 						</div>
 						<div class="detail-info">
-							{{-- <div class="product-rating">
+							<div class="product-rating">
                                 <i class="fa fa-star" aria-hidden="true"></i>
                                 <i class="fa fa-star" aria-hidden="true"></i>
                                 <i class="fa fa-star" aria-hidden="true"></i>
                                 <i class="fa fa-star" aria-hidden="true"></i>
                                 <i class="fa fa-star" aria-hidden="true"></i>
-                                <a href="#" class="count-review">(05 review)</a>
-                            </div> --}}
+                                <a  class="count-review">( {{ $jumlah_review }} review )</a>
+                            </div>
                             <h2 class="product-name" style="text-transform: capitalize">{{ $product->name }}</h2>
                             <div class="short-desc">
                                 <ul>
@@ -234,72 +166,119 @@
 								<div class="tab-content-item " id="review">
 									
 									<div class="wrap-review-form">
-										
 										<div id="comments">
-											<h2 class="woocommerce-Reviews-title">01 review for <span>Radiant-360 R6 Chainsaw Omnidirectional [Orage]</span></h2>
+											<h2 class="woocommerce-Reviews-title">{{ $jumlah_review }} review for <span>{{ $product->name }}</span></h2>
 											<ol class="commentlist">
+												@foreach ($Review as $value)											
 												<li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1" id="li-comment-20">
 													<div id="comment-20" class="comment_container"> 
-														<img alt="" src="{{ asset('template_website') }}/images/author-avata.jpg" height="80" width="80">
+														{{-- @foreach ($datauser as $data) --}}
+															
+														<img alt="" src="{{$value->user->picture }}" height="80" width="80">
+														{{-- @endforeach --}}
 														<div class="comment-text">
-															<div class="star-rating">
-																<span class="width-80-percent">Rated <strong class="rating">5</strong> out of 5</span>
+															<div class="rating">
+																@if ($value->ranting == 1)
+																	<i class="fa fa-star" style="color:#EFCE4A;" aria-hidden="true"></i>
+																@elseif ($value->ranting == 2)
+																	<i class="fa fa-star" style="color:#EFCE4A;" aria-hidden="true"></i>
+																	<i class="fa fa-star" style="color:#EFCE4A;" aria-hidden="true"></i>
+																@endif
+																@if ($value->ranting == 3)
+																	<i class="fa fa-star" style="color:#EFCE4A;" aria-hidden="true"></i>
+																	<i class="fa fa-star" style="color:#EFCE4A;" aria-hidden="true"></i>
+																	<i class="fa fa-star" style="color:#EFCE4A;" aria-hidden="true"></i>
+																@elseif ($value->ranting == 4)
+																	<i class="fa fa-star" style="color:#EFCE4A;" aria-hidden="true"></i>
+																	<i class="fa fa-star" style="color:#EFCE4A;" aria-hidden="true"></i>
+																	<i class="fa fa-star" style="color:#EFCE4A;" aria-hidden="true"></i>
+																	<i class="fa fa-star" style="color:#EFCE4A;" aria-hidden="true"></i>
+																@endif
+																@if ($value->ranting == 5)
+																	<i class="fa fa-star" style="color:#EFCE4A;" aria-hidden="true"></i>		
+																	<i class="fa fa-star" style="color:#EFCE4A;" aria-hidden="true"></i>																	
+																	<i class="fa fa-star" style="color:#EFCE4A;" aria-hidden="true"></i>																	
+																	<i class="fa fa-star" style="color:#EFCE4A;" aria-hidden="true"></i>																	
+																	<i class="fa fa-star" style="color:#EFCE4A;" aria-hidden="true"></i>																	
+
+																@endif
+
 															</div>
 															<p class="meta"> 
-																<strong class="woocommerce-review__author">admin</strong> 
+																<strong class="woocommerce-review__author">{{ $value->user->name }}</strong> 
 																<span class="woocommerce-review__dash">–</span>
-																<time class="woocommerce-review__published-date" datetime="2008-02-14 20:00" >Tue, Aug 15,  2017</time>
+																<time class="woocommerce-review__published-date" datetime="2008-02-14 20:00" > {{ showDateTime($value->created_at, 'd F Y') }}</time>
 															</p>
 															<div class="description">
-																<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+																<p>{{ $value->comment }}</p>
 															</div>
 														</div>
 													</div>
 												</li>
+												
+												@endforeach
 											</ol>
 										</div><!-- #comments -->
-
 										<div id="review_form_wrapper">
 											<div id="review_form">
 												<div id="respond" class="comment-respond"> 
-
-													<form action="#" method="post" id="commentform" class="comment-form" novalidate="">
+													@if ($Review_Komen)
+													<p class="comment-form-author">
+													<b>	Anda Sudah Pernah Comment Product Ini!</b>
+													</p>
+													@else														
+													<form action="{{ url('review') }}" method="post" id="commentform" class="comment-form" novalidate="">
+														@csrf
+														<input type="hidden" name="product_id" value="{{ $product->id }}">
+														<hr>
 														<p class="comment-notes">
-															<span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span>
+															<span id="email-notes">Alamat Email Anda Tidak Akan Di Publikasikan Ke Daftar Review</span>
 														</p>
 														<div class="comment-form-rating">
 															<span>Your rating</span>
 															<p class="stars">
-																
 																<label for="rated-1"></label>
-																<input type="radio" id="rated-1" name="rating" value="1">
+																<input type="radio" id="rated-1" name="ranting" value="1">
 																<label for="rated-2"></label>
-																<input type="radio" id="rated-2" name="rating" value="2">
+																<input type="radio" id="rated-2" name="ranting" value="2">
 																<label for="rated-3"></label>
-																<input type="radio" id="rated-3" name="rating" value="3">
+																<input type="radio" id="rated-3" name="ranting" value="3">
 																<label for="rated-4"></label>
-																<input type="radio" id="rated-4" name="rating" value="4">
+																<input type="radio" id="rated-4" name="ranting" value="4">
 																<label for="rated-5"></label>
-																<input type="radio" id="rated-5" name="rating" value="5" checked="checked">
+																<input type="radio" id="rated-5" name="ranting" value="5" checked="checked">
 															</p>
 														</div>
+														
+														{{-- @guest
 														<p class="comment-form-author">
 															<label for="author">Name <span class="required">*</span></label> 
-															<input id="author" name="author" type="text" value="">
+															<input id="author" name="author" type="text" disabled value="">												
 														</p>
 														<p class="comment-form-email">
 															<label for="email">Email <span class="required">*</span></label> 
-															<input id="email" name="email" type="email" value="" >
+															<input id="email" name="email" type="email" disabled value="" >
 														</p>
+														@else --}}
+														<p class="comment-form-author">
+															<label for="author">Name <span class="required">*</span></label> 
+															<input id="author" name="author" type="text" disabled value="{{ Auth::user()->name ?? '' }}">											
+														</p>
+														<p class="comment-form-email">
+															<label for="email">Email <span class="required">*</span></label> 
+															<input id="email" name="email" type="email" disabled value="{{ Auth::user()->email ?? '' }}" >
+														</p>
+														{{-- @endguest --}}
 														<p class="comment-form-comment">
 															<label for="comment">Your review <span class="required">*</span>
 															</label>
-															<textarea id="comment" name="comment" cols="45" rows="8"></textarea>
+															<textarea id="comment" required="required" name="comment" cols="45" rows="5"></textarea>
 														</p>
 														<p class="form-submit">
 															<input name="submit" type="submit" id="submit" class="submit" value="Submit">
 														</p>
 													</form>
+													@endif
 
 												</div><!-- .comment-respond-->
 											</div><!-- #review_form -->

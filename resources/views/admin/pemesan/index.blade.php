@@ -3,9 +3,9 @@
 
 <div class="row">
     <div class="col-md-12">
-        @if (session('message'))
-            <div class="alert alert-success">{{ session('message') }}</div>
-        @endif
+        @if (session('message'))        
+        <p class="alert alert-success text-center">{{ session('message') }}</p>
+        @endif 
         <div class="card">
             <div class="card-header">
                 <h3>Daftar Pemesan
@@ -41,7 +41,7 @@
                         <thead>
                             <th>Order Id</th>
                             <th>Tracking No</th>
-                            <th>Username</th>
+                            <th>Full Name</th>
                             <th>Payment Mode</th>
                             <th>Orderes Date</th>
                             <th>Status Message</th>
@@ -54,7 +54,7 @@
                                     <td>{{ $value->tracking_no }}</td>
                                     <td>{{ $value->fullname }}</td>
                                     <td>{{ $value->payment_mode }}</td>
-                                    <td>{{ $value->created_at->format('d-m-Y') }}</td>
+                                    <td>{{ showDateTime($value->created_at, 'd F Y') }}</td>
                                     <td>{{ $value->status_message }}</td>
                                     <td><a href="{{ url('/admin/pemesan/'.$value->id) }}" class="btn btn-primary" style="font-weight: bold;color:#2f2d2d"><span class="mdi mdi-eye"></span> View</a></td>
     

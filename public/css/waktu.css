@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 768px) {
+  .clock {
+    display: none;
+  }
+}
+body{
+  display: inline;
+  place-items: center;
+}
+.clock{
+  text-align: left;
+  padding: 0 30px;
+
+}
+.clock1{
+    text-align: left;
+    padding: 0 13px;
+  
+  }
+.clock .display{
+    margin-top: 10px;
+  font-size: 27px;
+  color: #1ABB9C;
+  font-family: 'inter', sans-serif;
+}
+.clock1 #tampil{
+    margin-bottom: 10px;
+  font-size: 12px;
+  color: #73879C;
+  font-family: 'inter', sans-serif;
+}

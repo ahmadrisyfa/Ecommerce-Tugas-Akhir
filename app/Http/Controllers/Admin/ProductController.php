@@ -48,8 +48,8 @@ class ProductController extends Controller
             'trending' => $request->trending == true ? '1' : '0',
             'status' =>$request->status == true ? '1' : '0',
             'meta_title' => $validatedData['meta_title'],
-            'meta_keyword' => $validatedData['meta_keyword'],
-            'meta_description' => $validatedData['meta_description'],  
+            // 'meta_keyword' => $validatedData['meta_keyword'],
+            // 'meta_description' => $validatedData['meta_description'],  
 
         ]);
 
@@ -115,8 +115,8 @@ class ProductController extends Controller
                     'trending' => $request->trending == true ? '1' : '0',
                     'status' =>$request->status == true ? '1' : '0',
                     'meta_title' => $validatedData['meta_title'],
-                    'meta_keyword' => $validatedData['meta_keyword'],
-                    'meta_description' => $validatedData['meta_description'],  
+                    // 'meta_keyword' => $validatedData['meta_keyword'],
+                    // 'meta_description' => $validatedData['meta_description'],  
                 ]);
 
                 

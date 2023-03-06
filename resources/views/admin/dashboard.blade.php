@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-md-12 grid-margin">   
                 @if(session('message'))
-                <h6 class="alert alert-success">{{ session('message') }}, {{ auth()->user()->name }}</h6>
+                <p class="alert alert-success text-center">{{ session('message') }}, {{ auth()->user()->name }}</p>
                 @endif      
                 <div class="me-md-3 me-xl-5">
                   <h2>Dashboard,</h2>

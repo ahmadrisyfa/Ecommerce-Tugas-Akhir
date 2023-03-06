@@ -33,4 +33,12 @@ class DashboardController extends Controller
         $TotalOrderTahunIni = Order::whereYear('created_at', $TahunIni)->count();
         return view('admin.dashboard',compact('totalProducts','totalCategory','totalBrands','totalallusers','totalusers','totalAdmin','totalorder','TotalOrderHariIni','TotalOrderBulanIni','TotalOrderTahunIni'));
     }
+    public function setting()
+    {
+        return view('admin.setting.index');
+    }
+    public function GantiPassword()
+    {
+        return view('admin.setting.ganti_password');
+    }
 }

@@ -29,6 +29,8 @@ Route::get('/product-terbaru', [App\Http\Controllers\Frontend\FrontendController
 Route::get('/search', [App\Http\Controllers\Frontend\FrontendController::class, 'search']);
 Route::get('thank-you', [App\Http\Controllers\Frontend\FrontendController::class, 'thankyou']);
 Route::get('tentang-kami', [App\Http\Controllers\Frontend\FrontendController::class, 'TentangKami']);
+Route::get('hubungi-kami', [App\Http\Controllers\Frontend\FrontendController::class, 'HubungiKami']);
+
 
 
 
@@ -39,11 +41,21 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/orders', [App\Http\Controllers\Frontend\OrderController::class, 'index']);
     Route::get('/orders/{orderId}', [App\Http\Controllers\Frontend\OrderController::class, 'show']);
 
+    Route::get('/riwayat-pesanan', [App\Http\Controllers\Frontend\FrontendController::class, 'RiwayatPesanan']);
+    Route::get('/riwayat-pesanan/{order_tracking_no}', [App\Http\Controllers\Frontend\FrontendController::class, 'RiwayatPesananShow']);
+
+
     Route::get('/profile', [App\Http\Controllers\Frontend\ProfileController::class, 'index']);
     Route::post('/profile', [App\Http\Controllers\Frontend\ProfileController::class, 'update']);
 
     Route::get('/ganti-password', [App\Http\Controllers\Frontend\ProfileController::class, 'passwordCreate']);
     Route::post('/ganti-password', [App\Http\Controllers\Frontend\ProfileController::class, 'changePassword']);
+
+    Route::post('/review', [App\Http\Controllers\Frontend\ReviewController::class, 'review']);
+    Route::post('hubungi-kami', [App\Http\Controllers\Frontend\FrontendController::class, 'HubungiKamiStore']);
+
+
+    Route::post('/change-profile-picture',[App\Http\Controllers\Frontend\ProfileController::class, 'changeProfilePicture'])->name('change-profile-picture');
 
     
 }); 
@@ -55,7 +67,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
 
     Route::get('dashboard',[App\Http\Controllers\Admin\DashboardController::class, 'index']);
+    Route::get('setting',[App\Http\Controllers\Admin\DashboardController::class, 'setting']);
+    Route::get('ganti-password',[App\Http\Controllers\Admin\DashboardController::class, 'GantiPassword']);
 
+
+// Route::post('/change-profile-picture',[DashboardController::class,'changeProfilePicture'])->name('change-profile-picture');
     
     Route::controller(App\Http\Controllers\Admin\TentangKamiController::class)->group(function (){
         Route::get('/tentang-kami','index');
@@ -66,6 +82,16 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
         Route::get('/tentang-kami/{TentangKami}/delete','destroy');
 
     });
+
+    Route::controller(App\Http\Controllers\Admin\HubungiKamiController::class)->group(function (){
+        Route::get('/hubungi-kami','index');
+        Route::get('/hubungi-kami/create','create');
+        Route::post('/hubungi-kami/create','store');
+        Route::get('/hubungi-kami/{HubungiKami}/edit','edit');
+        Route::put('/hubungi-kami/{HubungiKami}','update');
+        Route::get('/hubungi-kami/{HubungiKami}/delete','destroy');
+    });
+
     Route::controller(App\Http\Controllers\Admin\SliderController::class)->group(function (){
         Route::get('/sliders','index');
         Route::get('/sliders/create','create');
@@ -136,8 +162,6 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
         Route::get('/colors/{color}/edit','edit');
         Route::put('/colors/{color_id}','update'); 
         Route::get('/colors/{color_id}/delete','destroy');
-        
-
 
     });
 
@@ -147,15 +171,12 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
         Route::get('/pemesan','index');
         Route::get('/pemesan/{id_pemesan}','show');
         Route::put('/pemesan/{id_pemesan}','update');
-
         Route::get('/invoice/{id_pemesan}','ViewInvoice');
         Route::get('/invoice/{id_pemesan}/generate','generateInvoice');
         Route::get('/invoice/{id_pemesan}/generate','generateInvoice');
         Route::get('/invoice/{id_pemesan}/email','InvoiceEmail');
 
-
     });
-
 
     Route::controller(App\Http\Controllers\Admin\UserController::class)->group(function (){
         Route::get('/users','index');
@@ -166,5 +187,8 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
         Route::get('/users/{id}/delete','destroy');
 
     });
+    
+
+
 });
 

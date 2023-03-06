@@ -2,9 +2,9 @@
 @section('content')
 <div class="row">
     <div class="col-md-12">
-        @if (session('message'))
-            <div class="alert alert-success text-center">{{ session('message') }}</div>
-        @endif
+        @if (session('message'))        
+        <p class="alert alert-success text-center">{{ session('message') }}</p>
+        @endif 
         <div class="card">
             <div class="card-header">
                 <h3>
@@ -12,12 +12,8 @@
                 <a href="{{ url('admin/invoice/'.$pemesan->id.'/generate') }}" class="btn btn-primary float-end mx-1">Download Invoice</a>
                 <a href="{{ url('admin/invoice/'.$pemesan->id) }}" target="_blank" class="btn btn-warning float-end">View Invoice</a>
                 <a href="{{ url('admin/invoice/'.$pemesan->id.'/email') }}" class="btn btn-info float-end mx-1">Send invoice Via Mail</a>
-
-
                 </h3>
             </div>
-
-
    
             <div class="row">
                 <div class="col-md-6"  style="padding: 30px">
@@ -25,7 +21,7 @@
                     <hr>
                         <h5>Id Pesanan: {{ $pemesan->id }}</h5>
                         <h5>No Pesanan: {{ $pemesan->tracking_no }} </h5>
-                        <h5>Di Pesan Tanggal: {{ $pemesan->created_at->format('d-m-Y h:i A') }} </h5>
+                        <h5>Di Pesan Tanggal: {{ showDateTime($pemesan->created_at, 'd F Y') }} </h5>
                         <h5>Metode Pembayaran: {{ $pemesan->payment_mode }} </h5> 
                         <h5 style="border: 2px solid rgb(0, 251, 0);padding:5px">Status Pesanan: <span style="text-transform:uppercase">{{ $pemesan->status_message }}</span></h5> 
                 </div>
@@ -36,7 +32,6 @@
                     <h5>Email: {{ $pemesan->email }}</h5>
                     <h5>No Telepon: {{ $pemesan->phone }}</h5>
                     <h5>Alamat Lengkap: {{ $pemesan->address }}</h5>
-                    <h5>Pin Code: {{ $pemesan->pincode }}</h5>
                 </div>
             </div>
         
