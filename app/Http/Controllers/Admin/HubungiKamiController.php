@@ -14,4 +14,10 @@ class HubungiKamiController extends Controller
 
         return view('admin.hubungi_kami.index',compact('data'));
     }
+    public function HubungiKamidetail($id)
+    {
+        $data = HubungiKami::find($id);
+        return view('admin.hubungi_kami.detail',compact('data'));
+
+    }
 }

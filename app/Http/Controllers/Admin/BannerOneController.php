@@ -39,8 +39,8 @@ class BannerOneController extends Controller
     public function update(Request $request,$id)
     {
         $rules=[       
-            'image_banner_One_1'=>'image|file',
-            'image_banner_One_2'=>'image|file',
+            'image_banner_One_1'=>'image',
+            'image_banner_One_2'=>'image',
             'status_image_banner_One'=>'max:2'
         ];
 
@@ -56,7 +56,7 @@ class BannerOneController extends Controller
             $validatedData['image_banner_One_1'] = $request->file('image_banner_One_1')->store('img-banner-one');
         }
         if($request->file('image_banner_One_2')){
-            if($request->oldImage){
+            if($request->oldImage1){
                 Storage::delete($request->oldImage1);
             }
             $validatedData['image_banner_One_2'] = $request->file('image_banner_One_2')->store('img-banner-one');
@@ -66,17 +66,18 @@ class BannerOneController extends Controller
 
        return redirect('admin/banner-one')->with('message','Gambar 1 Dan 2 Berhasil Di Update');
     }
-    public function destroy(Banner $Banner)
+    
+    public function destroy(BannerOne $BannerOne)
     {
         
-        Storage::delete($Banner->image_banner_One_1);
-        Storage::delete($Banner->image_banner_One_2);
+        // Storage::delete($BannerOne->image_banner_One_1);
+        // Storage::delete($BannerOne->image_banner_One_2);
         
-        BannerOne::destroy($Banner->id);
+        BannerOne::destroy($BannerOne->id);
 
-        if (!$Banner = BannerOne::find($Banner)) {
-            abort('404');
-        }
+        // if (!$BannerOne = BannerOne::find($BannerOne)) {
+        //     abort('404');
+        // }
         return redirect('admin/banner-one')->with('message','Gambar 1 Dan 2 Berhasil Di Hapus');
 
     }

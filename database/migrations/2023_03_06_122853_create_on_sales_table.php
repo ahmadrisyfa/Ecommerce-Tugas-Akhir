@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('banner_one', function (Blueprint $table) {
+        Schema::create('on_sale', function (Blueprint $table) {
             $table->id();
-            $table->string('image_banner_one_1')->nullable();
-            $table->string('image_banner_one_2')->nullable();
-            $table->tinyInteger('status_image_banner_one')->default('0')->comment('1=sembunyikan,0=tampilkan');       
+            $table->dateTime('sale_date');
+            $table->boolean('status')->comment('1=Active,0=Tidak Active');   ;
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('banner');
+        Schema::dropIfExists('on_sale');
     }
 };

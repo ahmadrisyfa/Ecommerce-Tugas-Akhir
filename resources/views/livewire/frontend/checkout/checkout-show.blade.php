@@ -33,7 +33,7 @@
                             @error('phone')<small class="text-danger" style="font-size: 14px">{{ $message }}</small>@enderror
 
 						</p>												
-						<p class="row-in-form">
+						<p class="row-in-form" style="opacity:0">
 							<label for="zip-code">Pin-Code / ZIP-Code:<span>*</span></label>
 							<input id="zip-code" type="number" wire:model.defer="pincode" value="" placeholder="Your postal code">
                             @error('pincode')<small class="text-danger" style="font-size: 14px">{{ $message }}</small>@enderror
@@ -73,22 +73,21 @@
 							</label>
 							<label class="payment-method">
 								<input name="payment-method" id="payment-method-visa" value="visa" type="radio">
-								<span>visa</span>
-								<span class="payment-desc">There are many variations of passages of Lorem Ipsum available</span>
+								<span>Pembayaran Rekening</span>
+								<span class="payment-desc">Maaf Fitur Ini belum tersedia</span>
 							</label>
 							<label class="payment-method">
 								<input name="payment-method" id="payment-method-paypal" value="paypal" type="radio">
 								<span>Paypal</span>
-								<span class="payment-desc">You can pay with your credit</span>
-								<span class="payment-desc">card if you don't have a paypal account</span>
+								<span class="payment-desc">Maaf Fitur Ini belum tersedia</span>
 							</label>
 						</div>
 						<p class="summary-info grand-total"><span>Grand Total</span> <span class="grand-total-price">@currency($this->totalProductAmount)</span></p>
                        
 						{{-- <a href="thankyou.html" class="btn btn-medium">Place order now</a> --}}
 					</div>
-					<div class="summary-item shipping-method">
-						<h4 class="title-box f-title">Shipping method</h4>
+					{{-- <div class="summary-item shipping-method" style="opacity: 0">
+						<h4 class="title-box f-title" >Shipping method</h4>
 						<p class="summary-info"><span class="title">Flat Rate</span></p>
 						<p class="summary-info"><span class="title">Fixed $50.00</span></p>
 						<h4 class="title-box">Discount Codes</h4>
@@ -97,7 +96,7 @@
 							<input id="coupon-code" type="text" name="coupon-code" value="" placeholder="">	
 						</p>
 						<a href="#" class="btn btn-small">Apply</a>
-					</div>
+					</div> --}}
 				</div>
 
 				<div class="single-advance-box col-lg-12 col-md-12 col-sm-12 col-xs-12">

@@ -12,12 +12,14 @@ use App\Models\BannerTwo;
 use App\Models\BannerThree;
 use App\Models\HubungiKami;
 use App\Models\TentangKami;
+use App\Models\OnSale;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
 
 class FrontendController extends Controller
-{
+{   
+   
     public function index()
     {
         $sliders = Slider::where('status','0')->get();
@@ -29,8 +31,10 @@ class FrontendController extends Controller
         $banner_one = BannerOne::where('status_image_banner_One','0')->take(1)->latest()->get();
         $banner_two = BannerTwo::where('status_image_banner_two','0')->take(1)->latest()->get();
         $banner_three = BannerThree::where('status_image_banner_three','0')->take(1)->latest()->get();
-
-        return view('frontend.index',compact('sliders','productTerbaru','yang_mungkin_anda_suka','category','productHariIni','banner_one','banner_two','banner_three'));
+        $ProductOnsale = Product::where('trending','1')->inRandomOrder()->get();
+        $sale = OnSale::find(1);
+        // dd($sale);
+        return view('frontend.index',compact('sliders','productTerbaru','yang_mungkin_anda_suka','category','productHariIni','banner_one','banner_two','banner_three','ProductOnsale','sale'));
     }
 
     public function categories()

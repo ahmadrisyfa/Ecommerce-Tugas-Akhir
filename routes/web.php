@@ -54,7 +54,6 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/review', [App\Http\Controllers\Frontend\ReviewController::class, 'review']);
     Route::post('hubungi-kami', [App\Http\Controllers\Frontend\FrontendController::class, 'HubungiKamiStore']);
 
-
     Route::post('/change-profile-picture',[App\Http\Controllers\Frontend\ProfileController::class, 'changeProfilePicture'])->name('change-profile-picture');
 
     
@@ -85,11 +84,13 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
 
     Route::controller(App\Http\Controllers\Admin\HubungiKamiController::class)->group(function (){
         Route::get('/hubungi-kami','index');
-        Route::get('/hubungi-kami/create','create');
-        Route::post('/hubungi-kami/create','store');
-        Route::get('/hubungi-kami/{HubungiKami}/edit','edit');
-        Route::put('/hubungi-kami/{HubungiKami}','update');
-        Route::get('/hubungi-kami/{HubungiKami}/delete','destroy');
+        Route::get('/hubungi-kami/{id}','HubungiKamidetail');
+
+        // Route::get('/hubungi-kami/create','create');
+        // Route::post('/hubungi-kami/create','store');
+        // Route::get('/hubungi-kami/{HubungiKami}/edit','edit');
+        // Route::put('/hubungi-kami/{HubungiKami}','update');
+        // Route::get('/hubungi-kami/{HubungiKami}/delete','destroy');
     });
 
     Route::controller(App\Http\Controllers\Admin\SliderController::class)->group(function (){
@@ -108,7 +109,7 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
         Route::post('/banner-one/create','store');
         Route::get('/banner-one/{banner}/edit','edit');
         Route::put('/banner-one/{banner}/edit','update');
-        Route::get('/banner-one/{banner}/delete','destroy');
+        Route::get('/banner-one/{BannerOne}/delete','destroy');
     });
 
     Route::controller(App\Http\Controllers\Admin\BannerTwoController::class)->group(function (){
@@ -166,6 +167,8 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
     });
 
     Route::get('/brands',App\Http\Livewire\Admin\Brand\Index::class);
+    Route::get('/on-sale',App\Http\Livewire\Admin\OnSale\Index::class);
+
 
     Route::controller(App\Http\Controllers\Admin\PemesanController::class)->group(function (){
         Route::get('/pemesan','index');

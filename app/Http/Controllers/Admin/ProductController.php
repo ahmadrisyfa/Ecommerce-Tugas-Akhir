@@ -80,7 +80,6 @@ class ProductController extends Controller
                 ]);
             }
         }
-
         return redirect('/admin/products')->with('message','Product Berhasil Di tambahkan');
     }
 

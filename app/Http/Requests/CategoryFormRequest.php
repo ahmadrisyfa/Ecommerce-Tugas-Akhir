@@ -44,14 +44,14 @@ class CategoryFormRequest extends FormRequest
                 'required',
                 'string'
             ],
-            'meta_keyword' =>[
-                'required',
-                'string'
-            ],
-            'meta_description' =>[
-                'required',
-                'string'
-            ],
+            // 'meta_keyword' =>[
+            //     'required',
+            //     'string'
+            // ],
+            // 'meta_description' =>[
+            //     'required',
+            //     'string'
+            // ],
         ];
     }
 }

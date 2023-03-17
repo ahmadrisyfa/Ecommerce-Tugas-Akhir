@@ -61,7 +61,7 @@ class BannerThreeController extends Controller
         Storage::delete($BannerThree->image_banner_three);
         
         BannerThree::destroy($BannerThree->id);
-        return redirect('admin/banner-three')->with('message','Berhasil Haous Data Banner Three');
+        return redirect('admin/banner-three')->with('message','Berhasil Hapus Data Banner Three');
 
     }
 }

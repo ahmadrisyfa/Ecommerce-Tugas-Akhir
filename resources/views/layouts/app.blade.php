@@ -7,8 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>@yield('title') | KirunStore </title>	
-	<meta name="description" content="@yield('meta_description')">
-	<meta name="keywords" content="@yield('meta_keyword')">
+	{{-- <meta name="description" content="@yield('meta_description')"> --}}
+	{{-- <meta name="keywords" content="@yield('meta_keyword')"> --}}
 	<meta name="author" content="Ahmad Risyfa Khairun Niam">
 	@yield('css')
 	{{-- alert --}}
@@ -27,6 +27,8 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('template_website') }}/css/style.css">
 	<link rel="stylesheet" type="text/css" href="{{ asset('template_website') }}/css/color-01.css">
 	<link rel="stylesheet" type="text/css" href="{{ asset('template_website') }}/css/flexslider.css">
+
+	{{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css" integrity="sha512-63+XcK3ZAZFBhAVZ4irKWe9eorFG0qYsy2CaM5Z+F3kUn76ukznN0cp4SArgItSbDFD1RrrWgVMBY9C/2ZoURA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> --}}
     @livewireStyles
 </head>
 <body class="home-page home-01 ">
@@ -71,7 +73,8 @@
 	<script src="{{ asset('template_website') }}/js/jquery.sticky.js"></script>
 	<script src="{{ asset('template_website') }}/js/functions.js"></script>
 	@yield('script')
-
+	{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
+	{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js" integrity="sha512-GDey37RZAxFkpFeJorEUwNoIbkTwsyC736KNSYucu1WJWFK9qTdzYub8ATxktr6Dwke7nbFaioypzbDOQykoRg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
 		{{-- alert --}}
 	<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 	<script>

@@ -16,7 +16,7 @@
                     <div class="card-body">
                     <h5 class="card-title">{{ $value->user->name }}</h5>
                     <p class="card-text">{{Illuminate\Support\Str::of($value->comment)->words(20)}}</p>
-                    <a href="#" class="btn btn-primary">View</a>
+                    <a href="{{url('admin/hubungi-kami/'.$value->id)}}" class="btn btn-primary">View</a>
                     </div>
                     <div class="card-footer text-muted" style="font-weight:bold">
                         {{ $value->created_at->diffForHumans() }}

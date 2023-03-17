@@ -6,7 +6,7 @@
 					<div class="topbar-menu left-menu">
 						<ul>
 							<li class="menu-item" >
-								<a title="No Telepon: 085 867 770 343" href="#" ><span class="icon label-before fa fa-mobile"></span>No Telepon: 085 867 770 343</a>
+								<a title="No Telepon: 085 867 770 343" href="{{url('hubungi-kami')}}" ><span class="icon label-before fa fa-mobile"></span>No Telepon: 085 867 770 343</a>
 							</li>
 						</ul>
 					</div>

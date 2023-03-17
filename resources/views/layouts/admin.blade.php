@@ -26,6 +26,7 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"rel="stylesheet"/>
     @stack('css')
     @yield('css')
+
     <link rel="shortcut icon" href="{{ asset('logo.png') }}" />
     @livewireStyles
     <style>
@@ -64,6 +65,7 @@
   <script src="{{ asset('admin') }}/js/dataTables.bootstrap4.js"></script>
 @yield('scripts')
 @livewireScripts
+
 @stack('script')
 </body>
 </html>
