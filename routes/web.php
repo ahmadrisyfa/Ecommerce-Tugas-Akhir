@@ -29,7 +29,11 @@ Route::get('/product-terbaru', [App\Http\Controllers\Frontend\FrontendController
 Route::get('/search', [App\Http\Controllers\Frontend\FrontendController::class, 'search']);
 Route::get('thank-you', [App\Http\Controllers\Frontend\FrontendController::class, 'thankyou']);
 Route::get('tentang-kami', [App\Http\Controllers\Frontend\FrontendController::class, 'TentangKami']);
-Route::get('hubungi-kami', [App\Http\Controllers\Frontend\FrontendController::class, 'HubungiKami']);
+Route::get('hubungi-kacontohmi', [App\Http\Controllers\Frontend\FrontendController::class, 'HubungiKami']);
+
+
+
+
 
 
 
@@ -194,4 +198,3 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function(){
 
 
 });
-

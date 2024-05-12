@@ -123,10 +123,14 @@
           </div>
         </li>
         <li class="nav-item nav-profile dropdown">
+          {{-- @if (auth()->user()->picture )               --}}
+          @auth
           <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
             <img src="{{ auth()->user()->picture }}" alt="profile"/>
             <span class="nav-profile-name" style="text-transform:capitalize">{{ auth::user()->name }}</span>
           </a>
+          @endauth
+
           <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
             <a href="{{ url('/') }}" class="dropdown-item">
               <i class="mdi mdi-shopping text-primary"></i>

@@ -21,7 +21,7 @@
                         <div class="col-md-12 mb-3">
                             <label for="meta_title">Name</label>
                             <input required type="text" required class="form-control" value="{{ $data->nama }}" style="margin-top:5px" name="nama" id="nama">
-                            @error('name')
+                            @error('nama')
                             <small class="text-danger">{{ $message }}</small>
                             @enderror
                         </div>                

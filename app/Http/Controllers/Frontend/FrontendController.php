@@ -36,6 +36,11 @@ class FrontendController extends Controller
         // dd($sale);
         return view('frontend.index',compact('sliders','productTerbaru','yang_mungkin_anda_suka','category','productHariIni','banner_one','banner_two','banner_three','ProductOnsale','sale'));
     }
+    
+    public function contoh()
+    {
+        return view('contoh');
+    }
 
     public function categories()
     {

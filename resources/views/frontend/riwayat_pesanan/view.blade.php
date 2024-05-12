@@ -124,7 +124,7 @@
                                 <td>@currency($value->price)</td>
                                 <td>{{ $value->quantity }}</td>
                                 <td style="font-weight: bold">@currency($value->quantity * $value->price)</td>
-                                @php
+                            @php
                                 $totalsemuanya += $value->quantity * $value->price;
                             @endphp
                             </tr>                      
