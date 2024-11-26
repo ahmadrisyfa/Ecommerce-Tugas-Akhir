@@ -1,7 +1,9 @@
 <?php
 
 // use Illuminate\Support\Facades\Auth;
+// use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -57,6 +59,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('/review', [App\Http\Controllers\Frontend\ReviewController::class, 'review']);
     Route::post('hubungi-kami', [App\Http\Controllers\Frontend\FrontendController::class, 'HubungiKamiStore']);
+    Route::get('hubungi-kami', [App\Http\Controllers\Frontend\FrontendController::class, 'HubungiKami']);
+
 
     Route::post('/change-profile-picture',[App\Http\Controllers\Frontend\ProfileController::class, 'changeProfilePicture'])->name('change-profile-picture');
 

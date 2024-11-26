@@ -28,8 +28,8 @@ class ProductSeeder extends Seeder
             'small_description' =>$faker->sentence($nbWords = 20, $variabl5NbWords = true),            
             'description' => $faker->sentence($nbWords = 40, $variabl8NbWords = true),
             'meta_title' => $faker->sentence($nbWords = 10, $variableNbWords = true),
-            'meta_keyword' =>$faker->sentence($nbWords = 20, $variableNbWords = true),
-            'meta_description' => $faker->sentence($nbWords = 20, $variableNbWords = true),
+            // 'meta_keyword' =>$faker->sentence($nbWords = 20, $variableNbWords = true),
+            // 'meta_description' => $faker->sentence($nbWords = 20, $variableNbWords = true),
             'slug' => Str::random(35),
             'original_price' => $faker->numberBetween(55000,260000),
             'selling_price' => $faker->numberBetween(80000,100000),
@@ -133,8 +133,8 @@ class ProductSeeder extends Seeder
             'original_price' => $faker->numberBetween(55000,260000),
             'selling_price' => $faker->numberBetween(80000,100000),
             'meta_title' => $faker->sentence($nbWords = 10, $variableNbWords = true),
-            'meta_keyword' =>$faker->sentence($nbWords = 20, $variableNbWords = true),
-            'meta_description' => $faker->sentence($nbWords = 20, $variableNbWords = true),
+            // 'meta_keyword' =>$faker->sentence($nbWords = 20, $variableNbWords = true),
+            // 'meta_description' => $faker->sentence($nbWords = 20, $variableNbWords = true),
             'quantity'=> $faker->numberBetween(30,100),
         ]);
         Product::create([
@@ -147,8 +147,8 @@ class ProductSeeder extends Seeder
             'original_price' => $faker->numberBetween(55000,260000),
             'selling_price' => $faker->numberBetween(80000,100000),
             'meta_title' => $faker->sentence($nbWords = 10, $variableNbWords = true),
-            'meta_keyword' =>$faker->sentence($nbWords = 20, $variableNbWords = true),
-            'meta_description' => $faker->sentence($nbWords = 20, $variableNbWords = true),
+            // 'meta_keyword' =>$faker->sentence($nbWords = 20, $variableNbWords = true),
+            // 'meta_description' => $faker->sentence($nbWords = 20, $variableNbWords = true),
             'quantity'=> $faker->numberBetween(30,100),
         ]);
         Product::create([
@@ -161,8 +161,8 @@ class ProductSeeder extends Seeder
             'original_price' => $faker->numberBetween(55000,260000),
             'selling_price' => $faker->numberBetween(80000,100000),
             'meta_title' => $faker->sentence($nbWords = 10, $variableNbWords = true),
-            'meta_keyword' =>$faker->sentence($nbWords = 20, $variableNbWords = true),
-            'meta_description' => $faker->sentence($nbWords = 20, $variableNbWords = true),
+            // 'meta_keyword' =>$faker->sentence($nbWords = 20, $variableNbWords = true),
+            // 'meta_description' => $faker->sentence($nbWords = 20, $variableNbWords = true),
             'quantity'=> $faker->numberBetween(30,100),
         ]);
         Product::create([
@@ -175,8 +175,8 @@ class ProductSeeder extends Seeder
             'original_price' => $faker->numberBetween(55000,260000),
             'selling_price' => $faker->numberBetween(80000,100000),
             'meta_title' => $faker->sentence($nbWords = 10, $variableNbWords = true),
-            'meta_keyword' =>$faker->sentence($nbWords = 20, $variableNbWords = true),
-            'meta_description' => $faker->sentence($nbWords = 20, $variableNbWords = true),
+            // 'meta_keyword' =>$faker->sentence($nbWords = 20, $variableNbWords = true),
+            // 'meta_description' => $faker->sentence($nbWords = 20, $variableNbWords = true),
             'quantity'=> $faker->numberBetween(30,100),
         ]);
         Product::create([
@@ -189,8 +189,8 @@ class ProductSeeder extends Seeder
             'original_price' => $faker->numberBetween(55000,260000),
             'selling_price' => $faker->numberBetween(80000,100000),
             'meta_title' => $faker->sentence($nbWords = 10, $variableNbWords = true),
-            'meta_keyword' =>$faker->sentence($nbWords = 20, $variableNbWords = true),
-            'meta_description' => $faker->sentence($nbWords = 20, $variableNbWords = true),
+            // 'meta_keyword' =>$faker->sentence($nbWords = 20, $variableNbWords = true),
+            // 'meta_description' => $faker->sentence($nbWords = 20, $variableNbWords = true),
             'quantity'=> $faker->numberBetween(30,100),
         ]);
         Product::create([
@@ -203,8 +203,8 @@ class ProductSeeder extends Seeder
             'original_price' => $faker->numberBetween(55000,260000),
             'selling_price' => $faker->numberBetween(80000,100000),
             'meta_title' => $faker->sentence($nbWords = 10, $variableNbWords = true),
-            'meta_keyword' =>$faker->sentence($nbWords = 20, $variableNbWords = true),
-            'meta_description' => $faker->sentence($nbWords = 20, $variableNbWords = true),
+            // 'meta_keyword' =>$faker->sentence($nbWords = 20, $variableNbWords = true),
+            // 'meta_description' => $faker->sentence($nbWords = 20, $variableNbWords = true),
             'quantity'=> $faker->numberBetween(30,100),
         ]);
         Product::create([
@@ -217,8 +217,8 @@ class ProductSeeder extends Seeder
             'original_price' => $faker->numberBetween(55000,260000),
             'selling_price' => $faker->numberBetween(80000,100000),
             'meta_title' => $faker->sentence($nbWords = 10, $variableNbWords = true),
-            'meta_keyword' =>$faker->sentence($nbWords = 20, $variableNbWords = true),
-            'meta_description' => $faker->sentence($nbWords = 20, $variableNbWords = true),
+            // 'meta_keyword' =>$faker->sentence($nbWords = 20, $variableNbWords = true),
+            // 'meta_description' => $faker->sentence($nbWords = 20, $variableNbWords = true),
             'quantity'=> $faker->numberBetween(30,100),
         ]);
         Product::create([
@@ -231,8 +231,8 @@ class ProductSeeder extends Seeder
             'original_price' => $faker->numberBetween(55000,260000),
             'selling_price' => $faker->numberBetween(80000,100000),
             'meta_title' => $faker->sentence($nbWords = 10, $variableNbWords = true),
-            'meta_keyword' =>$faker->sentence($nbWords = 20, $variableNbWords = true),
-            'meta_description' => $faker->sentence($nbWords = 20, $variableNbWords = true),
+            // 'meta_keyword' =>$faker->sentence($nbWords = 20, $variableNbWords = true),
+            // 'meta_description' => $faker->sentence($nbWords = 20, $variableNbWords = true),
             'quantity'=> $faker->numberBetween(30,100),
         ]);
         Product::create([
@@ -245,8 +245,8 @@ class ProductSeeder extends Seeder
             'original_price' => $faker->numberBetween(100000,260000),
             'selling_price' => $faker->numberBetween(50000,100000),
             'meta_title' => $faker->sentence($nbWords = 10, $variableNbWords = true),
-            'meta_keyword' =>$faker->sentence($nbWords = 20, $variableNbWords = true),
-            'meta_description' => $faker->sentence($nbWords = 20, $variableNbWords = true),
+            // 'meta_keyword' =>$faker->sentence($nbWords = 20, $variableNbWords = true),
+            // 'meta_description' => $faker->sentence($nbWords = 20, $variableNbWords = true),
             'quantity'=> $faker->numberBetween(30,100),
         ]);
         Product::create([
@@ -259,8 +259,8 @@ class ProductSeeder extends Seeder
             'original_price' => $faker->numberBetween(55000,260000),
             'selling_price' => $faker->numberBetween(80000,100000),
             'meta_title' => $faker->sentence($nbWords = 10, $variableNbWords = true),
-            'meta_keyword' =>$faker->sentence($nbWords = 20, $variableNbWords = true),
-            'meta_description' => $faker->sentence($nbWords = 20, $variableNbWords = true),
+            // 'meta_keyword' =>$faker->sentence($nbWords = 20, $variableNbWords = true),
+            // 'meta_description' => $faker->sentence($nbWords = 20, $variableNbWords = true),
             'quantity'=> $faker->numberBetween(30,100),
         ]);
         Product::create([
@@ -273,8 +273,8 @@ class ProductSeeder extends Seeder
             'original_price' => $faker->numberBetween(55000,260000),
             'selling_price' => $faker->numberBetween(80000,100000),
             'meta_title' => $faker->sentence($nbWords = 10, $variableNbWords = true),
-            'meta_keyword' =>$faker->sentence($nbWords = 20, $variableNbWords = true),
-            'meta_description' => $faker->sentence($nbWords = 20, $variableNbWords = true),
+            // 'meta_keyword' =>$faker->sentence($nbWords = 20, $variableNbWords = true),
+            // 'meta_description' => $faker->sentence($nbWords = 20, $variableNbWords = true),
             'quantity'=> $faker->numberBetween(30,100),
         ]);
         Product::create([
@@ -287,8 +287,8 @@ class ProductSeeder extends Seeder
             'original_price' => $faker->numberBetween(55000,260000),
             'selling_price' => $faker->numberBetween(80000,100000),
             'meta_title' => $faker->sentence($nbWords = 10, $variableNbWords = true),
-            'meta_keyword' =>$faker->sentence($nbWords = 20, $variableNbWords = true),
-            'meta_description' => $faker->sentence($nbWords = 20, $variableNbWords = true),
+            // 'meta_keyword' =>$faker->sentence($nbWords = 20, $variableNbWords = true),
+            // 'meta_description' => $faker->sentence($nbWords = 20, $variableNbWords = true),
             'quantity'=> $faker->numberBetween(30,100),
         ]);
         Product::create([
@@ -301,8 +301,8 @@ class ProductSeeder extends Seeder
             'original_price' => $faker->numberBetween(55000,260000),
             'selling_price' => $faker->numberBetween(80000,100000),
             'meta_title' => $faker->sentence($nbWords = 10, $variableNbWords = true),
-            'meta_keyword' =>$faker->sentence($nbWords = 20, $variableNbWords = true),
-            'meta_description' => $faker->sentence($nbWords = 20, $variableNbWords = true),
+            // 'meta_keyword' =>$faker->sentence($nbWords = 20, $variableNbWords = true),
+            // 'meta_description' => $faker->sentence($nbWords = 20, $variableNbWords = true),
             'quantity'=> $faker->numberBetween(30,100),
         ]);
     }

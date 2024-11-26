@@ -5,6 +5,13 @@
     <title>Invoice #{{ $pemesan->id }}</title>
 
     <style>
+        *{
+            color: black
+        }
+        .bg-blue * {
+            color: inherit;
+        }
+        
         html,
         body {
             margin: 10px;
@@ -74,7 +81,7 @@
         }
         .bg-blue {
             background-color: #414ab1;
-            color: #fff;
+            color: #fff !important;
         }
     </style>
 </head>
@@ -84,13 +91,13 @@
         <thead>
             <tr>
                 <th width="50%" colspan="2">
-                    <h2 class="text-start">KirunStore</h2>
+                    <h2 class="text-start">Yukoding</h2>
                 </th>
                 <th width="50%" colspan="2" class="text-end company-data">
-                    <span>Invoice Id: #{{ $pemesan->id }}</span> <br>
+                    <span>Invoice Id: #yukoding-{{ $pemesan->id }}</span> <br>
                     <span>Date: {{ date('d / m / Y') }}</span> <br>
-                    <span>Zip code : 560077</span> <br>
-                    <span>Address: #555, Main road, shivaji nagar, Bangalore, India</span> <br>
+                    <span>Zip code : 8801</span> <br>
+                    <span>Address: Jl. Sagan No.1, Terban, Gondokusuman, Kota Yogyakarta, DI Yogyakarta </span> <br>
                 </th>
             </tr>
             <tr class="bg-blue">
@@ -128,11 +135,11 @@
                 <td>{{ $pemesan->address }}</td>
             </tr>
             <tr>
-                <td>Order Status:</td>
-                <td>{{ $pemesan->status_message }}</td>
+                <td colspan="2">Order Status:</td>
+                <td colspan="2">{{ $pemesan->status_message }}</td>
 
-                <td>Pin code:</td>
-                <td>{{ $pemesan->pincode }}</td>
+                {{-- <td>Pin code:</td> --}}
+                {{-- <td>{{ $pemesan->pincode }}</td> --}}
             </tr>
         </tbody>
     </table>
@@ -186,7 +193,7 @@
 
     <br>
     <p class="text-center">
-        Thank your for shopping with Kirun Store
+        Thank your for shopping with Yukoding Store
     </p>
 
 </body>

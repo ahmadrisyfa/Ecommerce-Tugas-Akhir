@@ -12,15 +12,20 @@ use Illuminate\Queue\SerializesModels;
 class InvoiceOrderMailable extends Mailable
 {
     use Queueable, SerializesModels;
-    public $pemesan;
+
+    public $pemesan;  // Informasi pemesan
+    public $order;    // Informasi pesanan (order)
+
     /**
      * Create a new message instance.
      *
-     * @return void
+     * @param $pemesan
+     * @param $order
      */
-    public function __construct($pemesan)
+    public function __construct($pemesan, $order)
     {
-      $this->pemesan = $pemesan;
+        $this->pemesan = $pemesan;  // Data pemesan
+        $this->order = $order;      // Data pesanan
     }
 
     /**
@@ -31,7 +36,7 @@ class InvoiceOrderMailable extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'Invoice Order Mailable',
+            subject: 'Invoice Order - ' . $this->pemesan->name,  // Subjek email
         );
     }
 
@@ -42,8 +47,13 @@ class InvoiceOrderMailable extends Mailable
      */
     public function content()
     {
-        $subject = "your ordr invoice";
-        return $this->subject($subject)->view('admin.invoice.generate-invoice');
+        return new Content(
+            view: 'admin.invoice.generate-invoice',
+            with: [
+                'pemesan' => $this->pemesan,  // Data pemesan untuk view
+                'order' => $this->order,     // Data order untuk view
+            ]
+        );
     }
 
     /**

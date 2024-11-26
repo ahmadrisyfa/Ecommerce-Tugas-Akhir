@@ -40,7 +40,7 @@
                         <div class="mb-3">
                             <label style="padding-bottom: 5px;font-weight:300">Category</label>
                                 <select name="category_id" id="category_id" class="form-select">
-                                    <option disabled selected style="font-weight: bold;">Select Category</option>
+                                    <option disabled selected style="font-weight: bold;text-align:center">Select Category</option>
                                     @foreach ($categories as $category)
                                         <option value="{{ $category->id }}" {{ (collect(old('category_id'))->contains($category->id)) ? 'selected':'' }}>{{ $category->name }}</option>
                                     @endforeach
@@ -57,7 +57,7 @@
                         <div class="mb-3">
                                 <label style="padding-bottom: 5px;font-weight:300">Select Brand</label>
                                 <select name="brand" id="brand" class="form-select">
-                                    <option disabled selected style="font-weight: bold;">Select Brand</option>
+                                    <option disabled selected style="font-weight: bold;text-align:center">Select Brand</option>
                                     @foreach ($brands as $Brand)
                                         <option value="{{ $Brand->name }}" {{ (collect(old('brand'))->contains($Brand->name)) ? 'selected':'' }}>{{ $Brand->name }}</option>
                                     @endforeach

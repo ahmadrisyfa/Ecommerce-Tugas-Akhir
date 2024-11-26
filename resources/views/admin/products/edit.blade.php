@@ -77,7 +77,7 @@
                         <div class="mb-3">
                             <label style="padding-bottom: 5px;font-weight:300">Category</label>
                                 <select name="category_id" id="category_id" class="form-select">
-                                    <option disabled selected style="font-weight: bold;">Select Category</option>
+                                    <option disabled selected style="font-weight: bold;text-align:center">Select Category</option>
                                         @foreach ($categories as $category)
                                             @if(old('category_id',$product->category_id) == $category->id)
                                                 <option value=" {{ $category->id }}" selected>{{ $category->name }} </option>
@@ -98,7 +98,7 @@
                         <div class="mb-3">
                                 <label style="padding-bottom: 5px;font-weight:300">Select Brand</label>
                                 <select name="brand" id="brand" class="form-select">
-                                        <option disabled selected style="font-weight: bold;">Select Brand</option>
+                                        <option disabled selected style="font-weight: bold;text-align:center">Select Brand</option>
                                 @foreach ($brands as $brand)
                                     @if(old('brand',$product->brand) == $brand->name)
                                         <option value="{{ $brand->name }}" selected>{{ $brand->name }}</option>

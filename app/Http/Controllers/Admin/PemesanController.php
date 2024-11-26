@@ -69,12 +69,19 @@ class PemesanController extends Controller
     public function InvoiceEmail(int $id_pemesan)
     {
         try {
-        $pemesan = Order::findOrFail($id_pemesan);
-            Mail::to("$pemesan->email")->send(new InvoiceOrderMailable($pemesan));
-            return redirect('admin/orders/'.$id_pemesan)->with('message','Invoice Mail has been sent to '.$pemesan->email);
-        } catch(\Exception $e) {
-            return redirect('admin/pemesan/'.$id_pemesan)->with('message','silahkan coba lagi');
-        }
+            // Ambil data pemesan
+            $pemesan = Order::findOrFail($id_pemesan);
 
-    } 
+            // Ambil data pesanan (contoh: detail order terkait)
+            $order = $pemesan->OrderItem;  // Sesuaikan dengan relasi model Anda
+
+            // Kirim email dengan pemesan dan order
+            Mail::to($pemesan->email)->send(new InvoiceOrderMailable($pemesan, $order));
+
+            return redirect('admin/pemesan/'.$id_pemesan)->with('message', 'Invoice Mail has been sent to ' . $pemesan->email);
+        } catch (\Exception $e) {
+            return redirect('admin/pemesan/'.$id_pemesan)->with('message', 'Silakan coba lagi');
+        }
+    }
+
 }  

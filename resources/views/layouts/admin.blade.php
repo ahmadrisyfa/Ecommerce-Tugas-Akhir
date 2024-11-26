@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Dashboard | KirunStore </title>
+    <title>Dashboard | YukodingStore </title>
     <style>
         label{
             text-transform: capitalize;

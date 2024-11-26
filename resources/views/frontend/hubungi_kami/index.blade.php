@@ -29,7 +29,7 @@
                                 <input type="text" disabled value="{{ Auth::user()->email ?? '' }}" id="email" name="email" >
 
                                 <label for="phone">Number Phone</label>
-                                <input type="text" disabled value="{{ Auth::user()->userDetail->phone ?? '' }}" id="phone" name="phone" >
+                                <input type="text" value="{{ Auth::user()->userDetail->phone ?? '' }}" id="phone" name="phone" >
 
                                 <label for="comment">Comment</label>
                                 <textarea name="comment"  id="comment"></textarea>

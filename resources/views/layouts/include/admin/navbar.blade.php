@@ -3,10 +3,10 @@
       <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
         <a class="navbar-brand brand-logo" href="{{ url('/admin/dashboard') }}">
           {{-- <img src="images/logo.svg" alt="logo"/></a> --}}
-          KirunStore
+         Yukoding Store
         <a class="navbar-brand brand-logo-mini" href="{{ url('/admin/dashboard') }}">
           {{-- <img src="images/logo-mini.svg" alt="logo"/>  --}}
-          KirunStore
+         Yukoding Store
         </a>
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
           <span class="mdi mdi-sort-variant"></span>

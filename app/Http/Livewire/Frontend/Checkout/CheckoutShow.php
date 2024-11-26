@@ -8,7 +8,8 @@ use App\Models\Product;
 use Livewire\Component;
 use App\Models\OrderItem;
 use Illuminate\Support\Str;
-
+use Illuminate\Support\Facades\Mail;
+use App\Mail\InvoiceOrderMailable;
 class CheckoutShow extends Component
 {
     public $carts, $totalProductAmount = 0;
@@ -56,6 +57,7 @@ class CheckoutShow extends Component
             }
             
         }
+        Mail::to($this->email)->send(new InvoiceOrderMailable($order, $order->orderItems));
         return $order;
     }
 

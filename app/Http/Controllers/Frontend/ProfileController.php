@@ -86,7 +86,7 @@ class ProfileController extends Controller
             $user->update([
                 'picture'=>$new_picture_name
             ]);
-            return response()->json(['status'=>1, 'msg'=>'Foto Profil Berhasil Di Update! Refresh Untuk melihat Hasil!']);
+            return response()->json(['status'=>1, 'msg'=>'Foto Profil Berhasil Di Tambahkan!']);
         }else{
             return response()->json(['status'=>0,'Foto Profil Gagal Diperbarui!']);
         }

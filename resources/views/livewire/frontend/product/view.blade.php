@@ -342,7 +342,14 @@
 									<div class="product product-widget-style">
 										<div class="thumbnnail">
 											<a href="{{ url('/collections/'.$value->category->slug.'/'.$value->slug) }}" title="{{ $value->name }}">
-												<figure><img src="{{ asset($value->productImages[0]->image) }}" alt="{{ $value->name }}"></figure>
+												<figure>
+													@if(isset($value->productImages[0]->image) && !empty($value->productImages[0]->image))
+														<img src="{{ asset($value->productImages[0]->image) }}" alt="{{ $value->name }}">
+													@else
+														<img src="{{ asset('logo.png') }}" alt="Belum Ada Foto">
+													@endif
+												</figure>
+												
 											</a>
 										</div>
 										<div class="product-info">

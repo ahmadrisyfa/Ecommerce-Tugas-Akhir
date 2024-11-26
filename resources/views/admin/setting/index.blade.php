@@ -83,7 +83,7 @@
           withCSRF:['_token','{{ csrf_token() }}'],
           onSuccess:function(message, element, status){
              alert(message);
-            
+             location.reload();
             // .Livewire.emit('updateAuthorProfileHeader');
             // .Livewire.emit('updateTopHeader');
           },

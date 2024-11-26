@@ -6,12 +6,12 @@
           <span class="menu-title">Dashboard</span>
         </a>
       </li>  
-      <li class="nav-item" {{ Request::is('admin/on-sale') ? 'active':''}}>
+      {{-- <li class="nav-item" {{ Request::is('admin/on-sale') ? 'active':''}}>
         <a class="nav-link" href="{{ url('admin/on-sale') }}">
           <i class="mdi mdi-sale menu-icon"></i>
           <span class="menu-title">On Sale</span>
         </a>
-      </li>  
+      </li>   --}}
       <li class="nav-item" {{ Request::is('admin/category') ? 'active':''}}>
         <a class="nav-link" href="{{ url('admin/category') }}">
           <i class="mdi mdi-google-circles-communities menu-icon"></i>

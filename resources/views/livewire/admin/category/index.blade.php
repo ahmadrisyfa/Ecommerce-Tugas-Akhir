@@ -16,6 +16,8 @@
                       <tr>
                         <th>ID</th>
                         <th>Name</th>
+                        <th>Gambar</th>
+                        <th>Deskripsi</th>
                         <th>Status</th>
                         <th>Action</th>
                       </tr>
@@ -25,6 +27,10 @@
                             <tr>
                                 <td>{{ $category->id }}</td>
                                 <td>{{ $category->name }}</td>
+                                <td>
+                                    <img src="{{ asset($category->image) }}" alt="">
+                                </td>
+                                <td>{{ $category->description }}</td>     
                                 <td>{{ $category->status == '1' ? 'Sembunyikan':'Tampilkan' }}</td>
                                 <td>
                                     <a href="{{ url('admin/category/'.$category->id.'/edit') }}"  style="font-weight:bold" class="btn btn-success"><span class="mdi mdi-lead-pencil"></span> Edit</a>
