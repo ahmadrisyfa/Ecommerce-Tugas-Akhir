@@ -12,7 +12,7 @@ use App\Models\ProductImage;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
-use App\Http\Requests\ProductFormrequest;
+use App\Http\Requests\ProductFormRequest;
 
 class ProductController extends Controller
 {
@@ -30,7 +30,7 @@ class ProductController extends Controller
         return view('admin.products.create',compact('categories','brands','colors'));
     }
 
-    public function store(ProductFormrequest $request)
+    public function store(ProductFormRequest $request)
     {
         $validatedData = $request->validated();
         $category = Category::findOrFail($validatedData['category_id']);
@@ -93,7 +93,7 @@ class ProductController extends Controller
         return view('admin.products.edit',compact('categories','brands','product','colors'));
     }
 
-    public function update(ProductFormrequest $request, int $product_id )
+    public function update(ProductFormRequest $request, int $product_id )
     {
             $validatedData = $request->validated();
 
